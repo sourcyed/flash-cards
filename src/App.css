@@ -5,6 +5,27 @@
   text-align: center;
 }
 
+table {
+  /* text-align: left; */
+  /* border: 1px solid; */
+  margin: auto;
+}
+
+table td{
+  table-layout:fixed;
+  width:100px;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+.wordNumber {
+  text-align: right;
+}
+
+.wordMeaning {
+  text-align: left;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

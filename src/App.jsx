@@ -2,20 +2,35 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import wordService from './services/words'
 
-function Word( { word }) {
+function Word( { word, wordNumber }) {
   const [showMeaning, toggleMeaning] = useState(false)
   return (
-    <li><button style={{background:'none', border:'none'}} onClick={() => toggleMeaning(!showMeaning)}>{word.word}</button> {showMeaning ? word.meaning: ''}</li>
+    <tr>
+      <td class='wordNumber'>
+        {wordNumber}.
+      </td>
+      <td>
+        <button style={{background:'none', border:'none'}} onClick={() => toggleMeaning(!showMeaning)}>
+          {word.word}
+        </button> 
+      </td>
+      <td class='wordMeaning'>
+        {showMeaning ? word.meaning: ''}
+      </td>
+    </tr>
   )
 }
 
 function Words( {words, filter} ) {
   const filteredWords = (filter == '') ? words
     : words.filter(w => w.word.includes(filter))
+  let wordNumber = 1;
   return (
-    <ol>
-        {filteredWords.map(w => <Word key={w.id} word={w} />)}
-    </ol>
+    <table>
+      <tbody>
+        {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++}/>)}
+      </tbody>
+    </table>
   )
 }
 

@@ -32,8 +32,11 @@ function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
 
   return (
     <tr>
+      <td>
+      </td>
       <td className='wordNumber'>
-        <button style={{background:'none', border:'none'}} onClick={delHandler}>{wordNumber}.</button>
+        {wordNumber}. &nbsp;
+        <button className='delete' onClick={delHandler}>X</button>
       </td>
       <td>
         <button style={{background:'none', border:'none'}} onClick={() => onHighlight(word)}>

@@ -8,20 +8,27 @@ function Word( { word }) {
   )
 }
 
-function Words( {words} ) {
+function Words( {words, filter} ) {
+  const filteredWords = (filter == '') ? words
+    : words.filter(w => w[0].includes(filter))
   return (
     <ol>
-        {words.map(w => <Word key={w[0]} word={w} />)}
+        {filteredWords.map(w => <Word key={w[0]} word={w} />)}
     </ol>
   )
 }
 
 function App() {
   const [words, setWords] = useState([])
+  const [searchFilter, setFilter] = useState('')
 
   useEffect(() => {
     wordService.getAll().then(ws => setWords(ws))
   }, [])
+
+  const updateFilter = newFilter => {
+    setFilter(newFilter.trim().toLowerCase())
+  }
 
   return (
     <div>
@@ -33,8 +40,8 @@ function App() {
 
       <div>
         <h3>Words</h3>
-        Search: <input />
-        <Words words={words}/>
+        Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
+        <Words words={words} filter={searchFilter}/>
       </div>
     </div>
   )

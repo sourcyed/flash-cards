@@ -17,10 +17,15 @@ function update(word) {
     return request.then(r => r.data)
 }
 
+function del(word) {
+    const request = axios.delete(baseUrl + word.id)
+    return request.then(r => r.data)
+}
+
 // function uploadImage(wordId, url) {
 //     const response = axios.get(url, { responseType: 'stream'}).then(r => {
         
 //     })
 // }
 
-export default { getAll, create, update }
+export default { getAll, create, update, del }

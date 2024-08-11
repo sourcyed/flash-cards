@@ -28,17 +28,15 @@ function WordDisplay( { word } ) {
   )
 }
 
-function Word( { word, wordNumber, onHighlight, showMeanings }) {
-  const handleClick = () => {
-    onHighlight(word)
-  }
+function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
+
   return (
     <tr>
       <td className='wordNumber'>
-        {wordNumber}.
+        <button style={{background:'none', border:'none'}} onClick={delHandler}>{wordNumber}.</button>
       </td>
       <td>
-        <button style={{background:'none', border:'none'}} onClick={handleClick}>
+        <button style={{background:'none', border:'none'}} onClick={() => onHighlight(word)}>
           {word.word}
         </button> 
       </td>
@@ -49,7 +47,7 @@ function Word( { word, wordNumber, onHighlight, showMeanings }) {
   )
 }
 
-function Words( {words, filter, highlightHandler} ) {
+function Words( {words, filter, highlightHandler, delHandler} ) {
   const [showMeanings, setShowMeanings] = useState(false)
   const filteredWords = (filter == '') ? words
     : words.filter(w => w.word.includes(filter) || w.meaning.includes(filter))
@@ -60,7 +58,7 @@ function Words( {words, filter, highlightHandler} ) {
       <button onClick={() => setShowMeanings(!showMeanings)}>{!showMeanings ? 'Show Meanings' : 'Hide Meanings'}</button>
       <table>
         <tbody>
-          {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)} showMeanings={showMeanings} />)}
+          {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)} showMeanings={showMeanings} delHandler={() => delHandler(w)}/>)}
         </tbody>
       </table>
     </>
@@ -120,6 +118,12 @@ function App() {
     setHighlight(word)
   }
 
+  const delHandler = word => {
+    if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
+      wordService.del(word).then(() => setWords(words.filter(w => w.id !== word.id)))
+    }
+  }
+
   return (
     <div>
       <form onSubmit={addWord}>
@@ -142,7 +146,7 @@ function App() {
         <h3>Words</h3>
         <WordDisplay word={highlightedWord}/>
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
-        <Words words={words} filter={searchFilter} highlightHandler={highlightHandler}/>
+        <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>
       </div>
     </div>
   )

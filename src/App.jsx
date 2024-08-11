@@ -28,12 +28,9 @@ function WordDisplay( { word } ) {
   )
 }
 
-function Word( { word, wordNumber, onHighlight }) {
-  const [showMeaning, toggleMeaning] = useState(false)
+function Word( { word, wordNumber, onHighlight, showMeanings }) {
   const handleClick = () => {
-    if (!showMeaning)
-      onHighlight(word)
-    toggleMeaning(!showMeaning)
+    onHighlight(word)
   }
   return (
     <tr>
@@ -46,22 +43,27 @@ function Word( { word, wordNumber, onHighlight }) {
         </button> 
       </td>
       <td className='wordMeaning'>
-        {showMeaning ? word.meaning : ''}
+        <small>{showMeanings ? word.meaning : ''}</small>
       </td>
     </tr>
   )
 }
 
 function Words( {words, filter, highlightHandler} ) {
+  const [showMeanings, setShowMeanings] = useState(false)
   const filteredWords = (filter == '') ? words
     : words.filter(w => w.word.includes(filter) || w.meaning.includes(filter))
-  let wordNumber = 1;
+  let wordNumber = 1
+  
   return (
-    <table>
-      <tbody>
-        {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)}/>)}
-      </tbody>
-    </table>
+    <>
+      <button onClick={() => setShowMeanings(!showMeanings)}>{!showMeanings ? 'Show Meanings' : 'Hide Meanings'}</button>
+      <table>
+        <tbody>
+          {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)} showMeanings={showMeanings} />)}
+        </tbody>
+      </table>
+    </>
   )
 }
 
@@ -87,9 +89,22 @@ function App() {
 
   const addWord = e => {
     e.preventDefault()
-    
+    if (newWord.trim() === '') return
+
     const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
-    wordService.create(word).then(r => setWords(words.concat(r)))
+   
+    const duplicate = words.find(w => w.word === newWord)
+    
+    if (duplicate) {
+      if (window.confirm(`${newWord} already exists in the dictionary, update the meaning?`)) {
+        word.id = duplicate.id
+        wordService.update(word).then(nW => setWords(words.map(w => w.id !== nW.id ? w : nW)))
+      } else {
+        return
+      }
+    } else {
+      wordService.create(word).then(r => setWords(words.concat(r)))
+    }
     setNewWord('')
     setNewMeaning('')
     setSentence('')
@@ -107,13 +122,13 @@ function App() {
         <h3>Add new word</h3>
         <p>
           <input onChange={handleInput(setNewWord)} value={newWord}/> 
-          : 
+          &nbsp; : &nbsp;
           <input onChange={handleInput(setNewMeaning)} value={newMeaning}/>
-          :
+          &nbsp; : &nbsp;
           <input onChange={handleInput(setSentence)} value={newSentence} />
-          :
+          &nbsp; : &nbsp;
           <input onChange={handleInput(setSentenceMeaning)} value={newSentenceMeaning} />
-          :
+          &nbsp; : &nbsp;
           <input type="file" />
         </p>
         <button type="submit">add</button>

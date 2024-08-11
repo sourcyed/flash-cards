@@ -4,7 +4,7 @@ import wordService from './services/words'
 
 function WordDisplay( { word } ) {
   if (word === null)
-    return
+    return (<br/>)
 
   const [showMeaning, toggleMeaning] = useState(false)
 
@@ -128,8 +128,26 @@ function App() {
 
   const delHandler = word => {
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
-      wordService.del(word).then(() => setWords(words.filter(w => w.id !== word.id)))
+      wordService.del(word).then(() => {
+        setWords(words.filter(w => w.id !== word.id))
+        if (word.id === highlightedWord.id) setHighlight(null)
+      })
     }
+  }
+
+  const highlightRandomWord = () => {
+    if (words.length == 0) return
+    if (words.length == 1) return setHighlight(words[0])
+    while (true) {
+      const rnd = Math.floor(Math.random() * (words.length))
+      const rndWord = words[rnd]
+      if (rndWord !== highlightedWord)
+        {
+          setHighlight(rndWord)
+          break
+        }
+    }
+    return
   }
 
   return (
@@ -152,6 +170,7 @@ function App() {
 
       <div>
         <h3>Words</h3>
+        <button onClick={highlightRandomWord}>random</button>
         <WordDisplay word={highlightedWord}/>
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
         <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>

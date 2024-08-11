@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/words/'
+const baseUrl = 'http://192.168.1.95:3001/words/'
 const assetsPath = './assets/images/'
 
 function getAll() {

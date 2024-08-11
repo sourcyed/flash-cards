@@ -1,14 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+import wordService from './services/words'
 
-function Words() {
+function Word( { word }) {
   return (
-    <></>
+    <li>{word[0]}</li>
+  )
+}
+
+function Words( {words} ) {
+  return (
+    <ol>
+        {words.map(w => <Word key={w[0]} word={w} />)}
+    </ol>
   )
 }
 
 function App() {
-  const [words, setWords] = useState(0)
+  const [words, setWords] = useState([])
+
+  useEffect(() => {
+    wordService.getAll().then(ws => setWords(ws))
+  }, [])
 
   return (
     <div>

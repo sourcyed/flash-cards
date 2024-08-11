@@ -98,7 +98,11 @@ function App() {
     if (duplicate) {
       if (window.confirm(`${newWord} already exists in the dictionary, update the meaning?`)) {
         word.id = duplicate.id
-        wordService.update(word).then(nW => setWords(words.map(w => w.id !== nW.id ? w : nW)))
+        wordService.update(word).then(nW => {
+          setWords(words.map(w => w.id !== nW.id ? w : nW))
+          if (highlightedWord.id == nW.id)
+            setHighlight(nW)
+        })
       } else {
         return
       }

@@ -4,11 +4,6 @@ import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
 
-
-
-
-
-
 function App() {
   const [words, setWords] = useState([])
   const [searchFilter, setFilter] = useState('')

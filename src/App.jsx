@@ -5,14 +5,19 @@ import wordService from './services/words'
 function WordDisplay( { word } ) {
   if (word === null)
     return
+
+  const [showMeaning, toggleMeaning] = useState(false)
+
   return (
     <table>
       <tbody>
         <tr>
-          <td><strong>{word.word}</strong></td>
+          <td><button className='clickable-text' onClick={() => toggleMeaning(!showMeaning)}><strong>{word.word}</strong></button></td>
         </tr>
         <tr>
-          <td><em>{word.meaning}</em></td>
+          <td>
+            <small><em>{showMeaning ? word.meaning : ''}</em></small>
+          </td>
         </tr>
         <tr>
           <td>{word.sentence}</td>
@@ -29,7 +34,7 @@ function WordDisplay( { word } ) {
 }
 
 function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
-
+  
   return (
     <tr>
       <td className='wordNumber'>
@@ -37,7 +42,7 @@ function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
         <button className='delete' onClick={delHandler}>X</button>
       </td>
       <td>
-        <button style={{background:'none', border:'none'}} onClick={() => onHighlight(word)}>
+        <button className='clickable-text' onClick={() => onHighlight(word)}>
           {word.word}
         </button> 
       </td>

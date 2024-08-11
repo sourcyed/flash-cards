@@ -11,11 +11,17 @@ table {
   margin: auto;
 }
 
-table td{
+table td {
   table-layout:fixed;
   width:150px;
   overflow:hidden;
   word-wrap:break-word;
+}
+
+.clickable-text {
+  background: none;
+  border: none;
+  font-size: 1em;
 }
 
 .wordNumber {

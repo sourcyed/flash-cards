@@ -17,12 +17,12 @@ function WordDisplay( { word, showMeaning, toggleMeaning } ) {
             <small><em>{showMeaning ? word.meaning : ''}</em></small>
           </td>
         </tr>
-        <tr>
+        {/* <tr>
           <td>{word.sentence}</td>
         </tr>
         <tr>
           <td>{word.sentenceMeaning}</td>
-        </tr>
+        </tr> */}
         {/* <tr>
           <td>{word.picture}</td>
         </tr> */}
@@ -158,12 +158,12 @@ function App() {
           <input onChange={handleInput(setNewWord)} value={newWord}/> 
           &nbsp; : &nbsp;
           <input onChange={handleInput(setNewMeaning)} value={newMeaning}/>
-          &nbsp; : &nbsp;
+          {/* &nbsp; : &nbsp;
           <input onChange={handleInput(setSentence)} value={newSentence} />
           &nbsp; : &nbsp;
           <input onChange={handleInput(setSentenceMeaning)} value={newSentenceMeaning} />
           &nbsp; : &nbsp;
-          <input type="file" />
+          <input type="file" /> */}
         </p>
         <button type="submit">add</button>
       </form>

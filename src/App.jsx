@@ -4,16 +4,16 @@ import wordService from './services/words'
 
 function Word( { word }) {
   return (
-    <li>{word[0]}</li>
+    <li>{word.word}</li>
   )
 }
 
 function Words( {words, filter} ) {
   const filteredWords = (filter == '') ? words
-    : words.filter(w => w[0].includes(filter))
+    : words.filter(w => w.word.includes(filter))
   return (
     <ol>
-        {filteredWords.map(w => <Word key={w[0]} word={w} />)}
+        {filteredWords.map(w => <Word key={w.id} word={w} />)}
     </ol>
   )
 }
@@ -21,6 +21,8 @@ function Words( {words, filter} ) {
 function App() {
   const [words, setWords] = useState([])
   const [searchFilter, setFilter] = useState('')
+  const [newWord, setNewWord] = useState('')
+  const [newMeaning, setNewMeaning] = useState('')
 
   useEffect(() => {
     wordService.getAll().then(ws => setWords(ws))
@@ -30,11 +32,22 @@ function App() {
     setFilter(newFilter.trim().toLowerCase())
   }
 
+  const handleInput = setFunc => event => setFunc(event.target.value)
+
+  const addWord = e => {
+    e.preventDefault()
+    
+    const word = { word: newWord, meaning: newMeaning }
+    wordService.create(word).then(r => setWords(words.concat(r)))
+    setNewWord('')
+    setNewMeaning('')
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={addWord}>
         <h3>Add new word</h3>
-        <p><input /> : <input /></p>
+        <p><input onChange={handleInput(setNewWord)} value={newWord}/> : <input onChange={handleInput(setNewMeaning)} value={newMeaning}/></p>
         <button type="submit">add</button>
       </form>
 

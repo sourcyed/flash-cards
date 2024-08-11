@@ -1,14 +1,24 @@
 {
-    "words": [
-    ["liike", "action"],
-    ["yläpuolella", "above"],
-    ["onnettomuus", "accident"],
-    ["tammenterho", "acorn"],
-    ["näytellä", "to act"],
-    ["näyttelijä", "actor"],
-    ["aikuinen", "adult"],
-    ["lisätä", "to add"],
-    ["jälkeen", "after"],
-    ["iltapäivä", "afternoon"]
-    ]
+  "words": [
+    {
+      "id": "844f",
+      "word": "liike",
+      "meaning": "action"
+    },
+    {
+      "id": "66a3",
+      "word": "yläpuolella",
+      "meaning": "above"
+    },
+    {
+      "id": "2b4f",
+      "word": "onnettomuus",
+      "meaning": "accident"
+    },
+    {
+      "id": "b268",
+      "word": "tammenterho",
+      "meaning": "acorn"
+    }
+  ]
 }

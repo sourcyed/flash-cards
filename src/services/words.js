@@ -6,4 +6,9 @@ function getAll() {
     return request.then(r => r.data)
 }
 
-export default { getAll }
+function create(word) {
+    const request = axios.post(baseUrl, word)
+    return request.then(r => r.data)
+}
+
+export default { getAll, create }

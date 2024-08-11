@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import wordService from './services/words'
 
-function WordDisplay( { word } ) {
+function WordDisplay( { word, showMeaning, toggleMeaning } ) {
   if (word === null)
     return (<br/>)
-
-  const [showMeaning, toggleMeaning] = useState(false)
 
   return (
     <table>
@@ -82,6 +80,7 @@ function App() {
   const [newSentence, setSentence] = useState('')
   const [newSentenceMeaning, setSentenceMeaning] = useState('')
   const [newPicture, setPicture] = useState('')
+  const [showMeaning, toggleMeaning] = useState(false)
 
   useEffect(() => {
     wordService.getAll().then(ws => setWords(ws))
@@ -107,7 +106,7 @@ function App() {
         wordService.update(word).then(nW => {
           setWords(words.map(w => w.id !== nW.id ? w : nW))
           if (highlightedWord.id === nW.id)
-            setHighlight(nW)
+            highlightHandler(nW)
         })
       } else {
         return
@@ -123,6 +122,7 @@ function App() {
   }
 
   const highlightHandler = word => {
+    toggleMeaning(false);
     setHighlight(word)
   }
 
@@ -130,20 +130,20 @@ function App() {
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
       wordService.del(word).then(() => {
         setWords(words.filter(w => w.id !== word.id))
-        if (word.id === highlightedWord.id) setHighlight(null)
+        if (word.id === highlightedWord.id) highlightHandler(null)
       })
     }
   }
 
   const highlightRandomWord = () => {
     if (words.length == 0) return
-    if (words.length == 1) return setHighlight(words[0])
+    if (words.length == 1) return highlightHandler(words[0])
     while (true) {
       const rnd = Math.floor(Math.random() * (words.length))
       const rndWord = words[rnd]
       if (rndWord !== highlightedWord)
         {
-          setHighlight(rndWord)
+          highlightHandler(rndWord)
           break
         }
     }
@@ -171,7 +171,7 @@ function App() {
       <div>
         <h3>Words</h3>
         <button onClick={highlightRandomWord}>random</button>
-        <WordDisplay word={highlightedWord}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning}/>
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
         <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>
       </div>

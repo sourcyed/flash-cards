@@ -23,7 +23,7 @@ function Word( { word, wordNumber }) {
 
 function Words( {words, filter} ) {
   const filteredWords = (filter == '') ? words
-    : words.filter(w => w.word.includes(filter))
+    : words.filter(w => w.word.includes(filter) || w.meaning.includes(filter))
   let wordNumber = 1;
   return (
     <table>

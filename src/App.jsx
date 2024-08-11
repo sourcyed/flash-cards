@@ -3,8 +3,9 @@ import './App.css'
 import wordService from './services/words'
 
 function Word( { word }) {
+  const [showMeaning, toggleMeaning] = useState(false)
   return (
-    <li>{word.word}</li>
+    <li><button style={{background:'none', border:'none'}} onClick={() => toggleMeaning(!showMeaning)}>{word.word}</button> {showMeaning ? word.meaning: ''}</li>
   )
 }
 

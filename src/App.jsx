@@ -32,8 +32,6 @@ function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
 
   return (
     <tr>
-      <td>
-      </td>
       <td className='wordNumber'>
         {wordNumber}. &nbsp;
         <button className='delete' onClick={delHandler}>X</button>
@@ -59,11 +57,13 @@ function Words( {words, filter, highlightHandler, delHandler} ) {
   return (
     <>
       <button onClick={() => setShowMeanings(!showMeanings)}>{!showMeanings ? 'Show Meanings' : 'Hide Meanings'}</button>
-      <table>
-        <tbody>
-          {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)} showMeanings={showMeanings} delHandler={() => delHandler(w)}/>)}
-        </tbody>
-      </table>
+      <div style={{ margin: 'auto', height: '50vh', width: '50vh', overflow: 'scroll', border: '1px solid' }}>
+        <table>
+          <tbody>
+            {filteredWords.map(w => <Word key={w.id} word={w} wordNumber={wordNumber++} onHighlight={() => highlightHandler(w)} showMeanings={showMeanings} delHandler={() => delHandler(w)}/>)}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }
@@ -101,7 +101,7 @@ function App() {
         word.id = duplicate.id
         wordService.update(word).then(nW => {
           setWords(words.map(w => w.id !== nW.id ? w : nW))
-          if (highlightedWord.id == nW.id)
+          if (highlightedWord.id === nW.id)
             setHighlight(nW)
         })
       } else {

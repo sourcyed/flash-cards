@@ -95,7 +95,6 @@ function App() {
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
     
-    console.log(availableWords.length)
     return availableWords
   }
 

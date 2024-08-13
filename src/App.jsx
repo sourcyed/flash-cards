@@ -38,7 +38,7 @@ function App() {
         word.id = duplicate.id
         wordService.update(word).then(nW => {
           setWords(words.map(w => w.id !== nW.id ? w : nW))
-          if (highlightedWord.id === nW.id)
+          if (highlightedWord && highlightedWord.id === nW.id)
             highlightHandler(nW)
         })
       } else {
@@ -63,7 +63,7 @@ function App() {
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
       wordService.del(word).then(() => {
         setWords(words.filter(w => w.id !== word.id))
-        if (word.id === highlightedWord.id) highlightHandler(null)
+        if (highlightedWord && word.id === highlightedWord.id) highlightHandler(null)
       })
     }
   }

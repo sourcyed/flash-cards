@@ -11,6 +11,7 @@ function App() {
   const [newMeaning, setNewMeaning] = useState('')
   const [highlightedWord, setHighlight] = useState(null)
   const [maxWords, setMaxWords] = useState(null)
+  const [wordsOffset, setWordsOffset] = useState(0)
   const [newSentence, setSentence] = useState('')
   const [newSentenceMeaning, setSentenceMeaning] = useState('')
   const [newPicture, setPicture] = useState('')
@@ -91,7 +92,7 @@ function App() {
   }
 
   const visibleWords = () => {
-    let availableWords =  maxWords ? words.slice(Math.max(words.length - maxWords, 0)) : words
+    let availableWords =  maxWords ? words.slice(Math.max(words.length - maxWords - wordsOffset, 0), Math.max(words.length - wordsOffset, 0)) : words
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
     
@@ -121,6 +122,8 @@ function App() {
         <button onClick={highlightRandomWord}>random</button>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning}/>
         latest x words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
+        <br />
+        offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>
         <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
         <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>

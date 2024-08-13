@@ -106,7 +106,7 @@ function App() {
         <button onClick={highlightRandomWord}>random</button>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning}/>
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
-        <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>
+        <Words words={words.toReversed()} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>
       </div>
     </div>
   )

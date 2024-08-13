@@ -75,11 +75,12 @@ function App() {
   }
 
   const highlightRandomWord = () => {
-    if (words.length == 0) return
-    if (words.length == 1) return highlightHandler(words[0])
+    const availableWords = visibleWords()
+    if (availableWords.length == 0) return
+    if (availableWords.length == 1) return highlightHandler(availableWords[0])
     while (true) {
-      const rnd = Math.floor(Math.random() * (words.length))
-      const rndWord = words[rnd]
+      const rnd = Math.floor(Math.random() * (availableWords.length))
+      const rndWord = availableWords[rnd]
       if (rndWord !== highlightedWord)
         {
           highlightHandler(rndWord)
@@ -87,6 +88,15 @@ function App() {
         }
     }
     return
+  }
+
+  const visibleWords = () => {
+    let availableWords =  maxWords ? words.slice(Math.max(words.length - maxWords, 0)) : words
+    if (searchFilter.length > 0)
+      availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
+    
+    console.log(availableWords.length)
+    return availableWords
   }
 
   return (
@@ -114,7 +124,7 @@ function App() {
         latest x words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
-        <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>
+        <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>
       </div>
     </div>
   )

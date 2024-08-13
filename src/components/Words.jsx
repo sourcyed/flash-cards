@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import Word from './Word'
 
-function Words( {words, filter, highlightHandler, delHandler} ) {
+function Words( {words, filter, highlightHandler, delHandler, maxWords} ) {
     const [showMeanings, setShowMeanings] = useState(false)
-    const filteredWords = (filter == '') ? words
-      : words.filter(w => w.word.includes(filter) || w.meaning.includes(filter))
+    const reversed = words.toReversed()
+
+    let filteredWords = (filter == '') ? reversed
+      : reversed.filter(w => w.word.includes(filter) || w.meaning.includes(filter))
+
+    if (maxWords !== null)
+      filteredWords = filteredWords.slice(0, maxWords)
+
     let wordNumber = 1
     
     return (

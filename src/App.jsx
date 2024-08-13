@@ -10,17 +10,23 @@ function App() {
   const [newWord, setNewWord] = useState('')
   const [newMeaning, setNewMeaning] = useState('')
   const [highlightedWord, setHighlight] = useState(null)
+  const [maxWords, setMaxWords] = useState(null)
   const [newSentence, setSentence] = useState('')
   const [newSentenceMeaning, setSentenceMeaning] = useState('')
   const [newPicture, setPicture] = useState('')
   const [showMeaning, toggleMeaning] = useState(false)
 
   useEffect(() => {
-    wordService.getAll().then(ws => setWords(ws))
-  }, [])
+    wordService.getAll().then(ws => {
+      setWords(ws)
+  })}, [])
 
   const updateFilter = newFilter => {
     setFilter(newFilter.trim().toLowerCase())
+  }
+
+  const updateMaxWords = m => {
+    setMaxWords(m === '' ? null : parseInt(m))
   }
 
   const handleInput = setFunc => event => setFunc(event.target.value)
@@ -105,8 +111,10 @@ function App() {
         <h3>Words</h3>
         <button onClick={highlightRandomWord}>random</button>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning}/>
+        latest x words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
+        <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
-        <Words words={words.toReversed()} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler}/>
+        <Words words={words} filter={searchFilter} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>
       </div>
     </div>
   )

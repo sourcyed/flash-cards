@@ -1,4 +1,4 @@
-function WordDisplay( { word, showMeaning, toggleMeaning } ) {
+function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
     if (word === null)
       return (<br/>)
   
@@ -10,7 +10,9 @@ function WordDisplay( { word, showMeaning, toggleMeaning } ) {
           </tr>
           <tr>
             <td>
-              <small><em>{showMeaning ? word.meaning : ''}</em></small>
+              {!showMeaning ? '' : 
+                <button className='clickable-text' onClick={() => onMeaningClick() || toggleMeaning(false)}><small><em>{word.meaning}</em></small></button>
+              }
             </td>
           </tr>
           {/* <tr>

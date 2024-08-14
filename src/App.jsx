@@ -16,6 +16,7 @@ function App() {
   const [newSentenceMeaning, setSentenceMeaning] = useState('')
   const [newPicture, setPicture] = useState('')
   const [showMeaning, toggleMeaning] = useState(false)
+  const [correctGuesses, setCorrectGuesses] = useState(0)
 
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -119,8 +120,9 @@ function App() {
 
       <div>
         <h3>Words</h3>
+        <h4>correct guesses: {correctGuesses}</h4>
         <button onClick={highlightRandomWord}>random</button>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={() => setCorrectGuesses(correctGuesses + 1)} />
         latest x words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         <br />
         offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>

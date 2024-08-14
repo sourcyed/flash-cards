@@ -102,10 +102,11 @@ function App() {
   }
 
   const visibleWords = () => {
-    let availableWords =  maxWords ? words.slice(Math.max(words.length - maxWords - wordsOffset, 0), Math.max(words.length - wordsOffset, 0)) : words
+    let availableWords = words
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
-    
+    if (maxWords)
+      availableWords = availableWords.slice(Math.max(availableWords.length - maxWords - wordsOffset, 0), Math.max(availableWords.length - wordsOffset, 0))
     return availableWords
   }
 

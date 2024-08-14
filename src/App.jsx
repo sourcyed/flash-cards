@@ -123,7 +123,7 @@ function App() {
         <h4>correct guesses: {correctGuesses}</h4>
         <button onClick={highlightRandomWord}>random</button>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={() => setCorrectGuesses(correctGuesses + 1)} />
-        latest x words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
+        max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         <br />
         offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>
         <br />

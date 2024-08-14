@@ -17,6 +17,7 @@ function App() {
   const [newPicture, setPicture] = useState('')
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
+  const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
 
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -76,9 +77,17 @@ function App() {
     }
   }
 
-  const highlightRandomWord = () => {
-    const availableWords = visibleWords()
-    if (availableWords.length == 0) return
+  const highlightRandomWord = (wordsToExclude) => {
+    const visible = visibleWords()
+    const availableWords = visible.filter(w => !wordsToExclude.has(w.id))
+    if (wordsToExclude.size >= visible.length) {
+      if (window.confirm('You guessed all the words correctly! Do you want to start over?')) {
+        setCorrectGuesses(0)
+        setCorrectlyGuessedWords(new Set())
+      }
+    }
+
+    if (availableWords.length == 0) return highlightHandler(null)
     if (availableWords.length == 1) return highlightHandler(availableWords[0])
     while (true) {
       const rnd = Math.floor(Math.random() * (availableWords.length))
@@ -102,7 +111,9 @@ function App() {
 
   const handleMeaningClick = () => {
     setCorrectGuesses(correctGuesses + 1)
-    highlightRandomWord()
+    const newSet = (new Set(correctlyGuessedWords)).add(highlightedWord.id)
+    setCorrectlyGuessedWords(newSet)
+    highlightRandomWord(newSet)
   }
 
   return (
@@ -126,7 +137,7 @@ function App() {
       <div>
         <h3>Words</h3>
         <h4>correct guesses: {correctGuesses}</h4>
-        <button onClick={highlightRandomWord}>random</button>
+        <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} />
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         <br />

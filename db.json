@@ -19,6 +19,2107 @@
       "id": "b268",
       "word": "tammenterho",
       "meaning": "acorn"
+    },
+    {
+      "id": "88c9",
+      "word": "näytellä",
+      "meaning": "to act"
+    },
+    {
+      "id": "f6a5",
+      "word": "näyttellijä",
+      "meaning": "actor",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "014b",
+      "word": "aikuinen",
+      "meaning": "adult",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b01f",
+      "word": "lisätä",
+      "meaning": "to add",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d6b8",
+      "word": "jälkeen",
+      "meaning": "after",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "69c5",
+      "word": "iltapäivä",
+      "meaning": "afternoon",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "17d6",
+      "word": "seikkailu",
+      "meaning": "adventure",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "06e4",
+      "word": "olla samaa mieltä",
+      "meaning": "to agree",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9799",
+      "word": "lentokone",
+      "meaning": "airplane",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d881",
+      "word": "lentokenttä",
+      "meaning": "airport",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "herätyskello",
+      "meaning": "alarm clock",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "fdee"
+    },
+    {
+      "id": "6501",
+      "word": "avaruusolio",
+      "meaning": "alien",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "40a1",
+      "word": "kaikki",
+      "meaning": "all",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "dc32",
+      "word": "yksin",
+      "meaning": "alone",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7399",
+      "word": "aina",
+      "meaning": "always",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a79a",
+      "word": "huvipuisto",
+      "meaning": "amusement park",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "adb7",
+      "word": "vihainen",
+      "meaning": "angry",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d923",
+      "word": "eläin",
+      "meaning": "animal",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "775c",
+      "word": "vastaus",
+      "meaning": "answer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3db3",
+      "word": "muurahainen",
+      "meaning": "ant",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "79f2",
+      "word": "leiopomo",
+      "meaning": "bakery",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3608",
+      "word": "side",
+      "meaning": "bandage",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "pallo",
+      "meaning": "ball",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "4fd1"
+    },
+    {
+      "word": "yhtye",
+      "meaning": "band",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "1667"
+    },
+    {
+      "id": "7d58",
+      "word": "ilmapallo",
+      "meaning": "balloon",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "909c",
+      "word": "säästöpossu",
+      "meaning": "piggy bank",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4ece",
+      "word": "lato",
+      "meaning": "barn",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "88ec",
+      "word": "pesäpallo",
+      "meaning": "baseball",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3ed6",
+      "word": "koripallo",
+      "meaning": "basketball",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cfa2",
+      "word": "kontrabasso",
+      "meaning": "double bass",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d7b4",
+      "word": "esiliina",
+      "meaning": "apron",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "c003",
+      "word": "nojatuoli",
+      "meaning": "armchair",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "635a",
+      "word": "ympäri",
+      "meaning": "around",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b4f9",
+      "word": "kysyä",
+      "meaning": "to ask",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "21d1",
+      "word": "astronautti",
+      "meaning": "astronaut",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "16be",
+      "word": "täti",
+      "meaning": "aunt",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4363",
+      "word": "yleisö",
+      "meaning": "audience",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "paistaa",
+      "meaning": "to bake",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "58fd"
+    },
+    {
+      "id": "2957",
+      "word": "pekoni",
+      "meaning": "bacon",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "reppu",
+      "meaning": "backpack",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "ec8f"
+    },
+    {
+      "word": "tuhma",
+      "meaning": "bad",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "ace3"
+    },
+    {
+      "word": "takana",
+      "meaning": "behind",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "2cb8"
+    },
+    {
+      "id": "0ab3",
+      "word": "maila",
+      "meaning": "baseball bat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "125e",
+      "word": "lepakko",
+      "meaning": "bat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "60bf",
+      "word": "kylpeä",
+      "meaning": "to bath",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "416f",
+      "word": "kylpytakki",
+      "meaning": "bathrobe",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "1306",
+      "word": "kylpyhuone",
+      "meaning": "bathroom",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8a88",
+      "word": "kylpyhamme",
+      "meaning": "bathtub",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "738e",
+      "word": "papu",
+      "meaning": "bean",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b8ec",
+      "word": "ranta",
+      "meaning": "beach",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cde3",
+      "word": "parta",
+      "meaning": "beard",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "tulla",
+      "meaning": "become",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "0b3c"
+    },
+    {
+      "word": "mehiläinen",
+      "meaning": "bee",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "a270"
+    },
+    {
+      "word": "makuuhuone",
+      "meaning": "bedroom",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "3b13"
+    },
+    {
+      "id": "0731",
+      "word": "ennen kuin",
+      "meaning": "before",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "f333",
+      "word": "penkki",
+      "meaning": "bench",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2ce3",
+      "word": "vyö",
+      "meaning": "belt",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "välissä",
+      "meaning": "between",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "364c"
+    },
+    {
+      "id": "0117",
+      "word": "alapuolella",
+      "meaning": "below",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "bffc",
+      "word": "polkupyörä",
+      "meaning": "bicycle",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7493",
+      "word": "suuri",
+      "meaning": "big",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0f5a",
+      "word": "lintuhäkki",
+      "meaning": "birdcage",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8b3a",
+      "word": "liitutaulu",
+      "meaning": "blackboard",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e0f6",
+      "word": "viltti",
+      "meaning": "blanket",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8d1e",
+      "word": "pureskella",
+      "meaning": "to bite",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "96cb",
+      "word": "purra",
+      "meaning": "to bite",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "1fec",
+      "word": "vene",
+      "meaning": "boat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "luu",
+      "meaning": "bone",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "8a27"
+    },
+    {
+      "id": "d040",
+      "word": "keho",
+      "meaning": "body",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9532",
+      "word": "sormi",
+      "meaning": "finger",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ae0d",
+      "word": "käsi",
+      "meaning": "hand",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "c076",
+      "word": "ranne",
+      "meaning": "wrist",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5fe1",
+      "word": "käsivarsi",
+      "meaning": "arm",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7588",
+      "word": "vyötärö",
+      "meaning": "waist",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0f5b",
+      "word": "kirjähylly",
+      "meaning": "bookcase",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8a5a",
+      "word": "saapas",
+      "meaning": "boot",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8785",
+      "word": "pullo",
+      "meaning": "bottle",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9a7e",
+      "word": "kulho",
+      "meaning": "bowl",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "eabb",
+      "word": "laatikko",
+      "meaning": "box",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "05cd",
+      "word": "pitkästynyt",
+      "meaning": "bored",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6865",
+      "word": "tylsä",
+      "meaning": "boring",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "80a1",
+      "word": "mennä rikki",
+      "meaning": "to break",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e71d",
+      "word": "aamupala",
+      "meaning": "breakfast",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e620",
+      "word": "silta",
+      "meaning": "bridge",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "685d",
+      "word": "tuoda",
+      "meaning": "to bring",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b4f8",
+      "word": "ottaa mukaan",
+      "meaning": "to bring",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8038",
+      "word": "parsakaali",
+      "meaning": "broccoli",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0340",
+      "word": "luuta",
+      "meaning": "broom",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "59d9",
+      "word": "jalka",
+      "meaning": "foot",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a3dd",
+      "word": "polvi",
+      "meaning": "knee",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6a10",
+      "word": "varvas",
+      "meaning": "toe",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7071",
+      "word": "rakentaa",
+      "meaning": "to build",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d5ae",
+      "word": "perhonen",
+      "meaning": "butterfly",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ffc7",
+      "word": "lihakauppias",
+      "meaning": "butcher",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e006",
+      "word": "kaali",
+      "meaning": "cabbage",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e988",
+      "word": "kakku",
+      "meaning": "cake",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5573",
+      "word": "kameli",
+      "meaning": "camel",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e600",
+      "word": "taskulaskin",
+      "meaning": "calculator",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "dbb8",
+      "word": "soittaa",
+      "meaning": "to call",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2a71",
+      "word": "osata",
+      "meaning": "can",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "95d3",
+      "word": "kynttilä",
+      "meaning": "candle",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "84e5",
+      "word": "kynttilänjalka",
+      "meaning": "candlestick",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0ffd",
+      "word": "karamellit",
+      "meaning": "candy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e5c3",
+      "word": "kyynärpää",
+      "meaning": "elbow",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "032e",
+      "word": "kaula",
+      "meaning": "neck",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6596",
+      "word": "rinta",
+      "meaning": "chest",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6dff",
+      "word": "matto",
+      "meaning": "carpet",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5fda",
+      "word": "porkkana",
+      "meaning": "carrot",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ed3c",
+      "word": "linna",
+      "meaning": "castle",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cbae",
+      "word": "kantaa",
+      "meaning": "to carry",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a860",
+      "word": "katto",
+      "meaning": "ceiling",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "68fa",
+      "word": "kukkakaali",
+      "meaning": "cauliflower",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7752",
+      "word": "pyydystää",
+      "meaning": "to catch",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "edb7",
+      "word": "ottaa kiinni",
+      "meaning": "to catch",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5922",
+      "word": "sellery",
+      "meaning": "celery",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "aecb",
+      "word": "sello",
+      "meaning": "cello",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4d04",
+      "word": "vaihtaa",
+      "meaning": "change",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "f9d9",
+      "word": "mekko",
+      "meaning": "dress",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "de36",
+      "word": "liitu",
+      "meaning": "chalk",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "134c",
+      "word": "taulu",
+      "meaning": "board",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "251d",
+      "word": "murot",
+      "meaning": "cereal",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8d3e",
+      "word": "mestari",
+      "meaning": "champion",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "37f9",
+      "word": "ajaa takaa",
+      "meaning": "to chase",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "03a3",
+      "word": "kirsikka",
+      "meaning": "cherry",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5d6c",
+      "word": "shakki",
+      "meaning": "chess",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5b2f",
+      "word": "valita",
+      "meaning": "choose",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cd84",
+      "word": "lapset",
+      "meaning": "children",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cc8a",
+      "word": "sirkus",
+      "meaning": "cirkus",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "35dd",
+      "word": "puhdas",
+      "meaning": "clean",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b64a",
+      "word": "taputtaa",
+      "meaning": "to clap",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9934",
+      "word": "luokkahuone",
+      "meaning": "classroom",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "869a",
+      "word": "kiivetä",
+      "meaning": "to climb",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "06e0",
+      "word": "kello",
+      "meaning": "clock",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d49e",
+      "word": "voi ei!",
+      "meaning": "oh no!",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d900",
+      "word": "pestä",
+      "meaning": "to clean",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "99f9",
+      "word": "klarinetti",
+      "meaning": "clarinet",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cc61",
+      "word": "reisi",
+      "meaning": "thigh",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "1d2e",
+      "word": "pohje",
+      "meaning": "calf",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9832",
+      "word": "nilkka",
+      "meaning": "ankle",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "488a",
+      "word": "sulkea",
+      "meaning": "to close",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6963",
+      "word": "valmentaja",
+      "meaning": "coach",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "075c",
+      "word": "kolikko",
+      "meaning": "coin",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e869",
+      "word": "pilvi",
+      "meaning": "cloud",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8cd1",
+      "word": "takki",
+      "meaning": "coat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "77b9",
+      "word": "flunssa",
+      "meaning": "cold",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "c4d3",
+      "word": "pelle",
+      "meaning": "clown",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d3d3",
+      "word": "värittä",
+      "meaning": "to color",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4139",
+      "word": "väri",
+      "meaning": "color",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3a7d",
+      "word": "kammata",
+      "meaning": "comb",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "96c7",
+      "word": "konsertti",
+      "meaning": "concert",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5c7a",
+      "word": "harmaa",
+      "meaning": "gray",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "231c",
+      "word": "keltainen",
+      "meaning": "yellow",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6933",
+      "word": "punainen",
+      "meaning": "red",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b348",
+      "word": "oranssi",
+      "meaning": "orange",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0c0f",
+      "word": "vihreä",
+      "meaning": "green",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0d73",
+      "word": "sininen",
+      "meaning": "blue",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7547",
+      "word": "musta",
+      "meaning": "black",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e01e",
+      "word": "violetti",
+      "meaning": "purple",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "24b0",
+      "word": "ruskea",
+      "meaning": "brown",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "aae6",
+      "word": "valkoinen",
+      "meaning": "white",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d4f6",
+      "word": "vaalean-punainen",
+      "meaning": "pink",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "203c",
+      "word": "astiakaappi",
+      "meaning": "cupboard",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2d92",
+      "word": "itkeä",
+      "meaning": "cry",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5e6c",
+      "word": "leikata",
+      "meaning": "cut",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4560",
+      "word": "kuppi",
+      "meaning": "cup",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2f70",
+      "word": "kruunu",
+      "meaning": "crown",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "942f",
+      "word": "ylittää katu",
+      "meaning": "to cross",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "35b7",
+      "word": "rapu",
+      "meaning": "crab",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e85e",
+      "word": "serkku",
+      "meaning": "cousin",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4c8d",
+      "word": "krokotiili",
+      "meaning": "crocodile",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ae44",
+      "word": "karjapaimen",
+      "meaning": "cowboy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "77b6",
+      "word": "laskea",
+      "meaning": "to count",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "978c",
+      "word": "voileipäkeksi",
+      "meaning": "cracker",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a45f",
+      "word": "yskä",
+      "meaning": "cough",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "58e1",
+      "word": "lehmä",
+      "meaning": "cow",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "de6f",
+      "word": "maksaa",
+      "meaning": "cost",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "c174",
+      "word": "maissi",
+      "meaning": "corn",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4a77",
+      "word": "hattara",
+      "meaning": "cotton candy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3eb4",
+      "word": "ruoanlaitto",
+      "meaning": "cooking",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b679",
+      "word": "asu",
+      "meaning": "costume",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b79f",
+      "word": "kulma",
+      "meaning": "corner",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "48de",
+      "word": "pikkuleivät",
+      "meaning": "cookies",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "edcf",
+      "word": "kurkku",
+      "meaning": "cucumber",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b873",
+      "word": "sohvatyyny",
+      "meaning": "cushion",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d4e5",
+      "word": "lautaset",
+      "meaning": "cymbals",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "cf2e",
+      "word": "tanssija",
+      "meaning": "dance",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "c443",
+      "word": "kauris",
+      "meaning": "deer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4d2d",
+      "word": "tytär",
+      "meaning": "daughter",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "58aa",
+      "word": "hammaslääkäri",
+      "meaning": "dentist",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e13d",
+      "word": "tanssia",
+      "meaning": "to dance",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9189",
+      "word": "tavaratalo",
+      "meaning": "department store",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "bc82",
+      "word": "illallinen",
+      "meaning": "dinner",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "9885",
+      "word": "suunta",
+      "meaning": "direction",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e6ae",
+      "word": "likainen",
+      "meaning": "dirty",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d906",
+      "word": "vaikea",
+      "meaning": "difficult",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d4da",
+      "word": "erilainen",
+      "meaning": "different",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "eb1f",
+      "word": "autiomaa",
+      "meaning": "desert",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a0d9",
+      "word": "koulupöytä",
+      "meaning": "desk",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "35ff",
+      "word": "jälkiruoka",
+      "meaning": "dessert",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "11a7",
+      "word": "olla eri mieltä",
+      "meaning": "to disagree",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "187e",
+      "word": "tehdä",
+      "meaning": "do",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3f5a",
+      "word": "koirankoppi",
+      "meaning": "doghouse",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "182f",
+      "word": "astia",
+      "meaning": "dish",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "f941",
+      "word": "lääkäri",
+      "meaning": "doctor",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8ac3",
+      "word": "nukke",
+      "meaning": "doll",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "21d5",
+      "word": "tiskikone",
+      "meaning": "dishwasher",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6e6a",
+      "word": "delfiini",
+      "meaning": "dolphine",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d646",
+      "word": "ovi",
+      "meaning": "door",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4a86",
+      "word": "alas",
+      "meaning": "down",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5815",
+      "word": "nähdä unta",
+      "meaning": "dream",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "13b5",
+      "word": "piirtää",
+      "meaning": "draw",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "332b",
+      "word": "ovikello",
+      "meaning": "doorbell",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e4b6",
+      "word": "vetolaatikko",
+      "meaning": "drawer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0ead",
+      "word": "ajaa",
+      "meaning": "drive",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "709e",
+      "word": "rumpu",
+      "meaning": "drum",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "90ff",
+      "word": "autonkuljettaja",
+      "meaning": "driver",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0143",
+      "word": "kuiva",
+      "meaning": "dry",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "f093",
+      "word": "juoda",
+      "meaning": "to drink",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "aa9b",
+      "word": "pudottaa",
+      "meaning": "drop",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "1c52",
+      "word": "sorsa",
+      "meaning": "duck",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "369e",
+      "word": "norsu",
+      "meaning": "elephant",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "Maa",
+      "meaning": "Earth",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "326a"
+    },
+    {
+      "id": "650f",
+      "word": "itä",
+      "meaning": "east",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "aa8d",
+      "word": "muna",
+      "meaning": "egg",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5081",
+      "word": "helppo",
+      "meaning": "easy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7fb6",
+      "word": "hissi",
+      "meaning": "elevator",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "91a3",
+      "word": "tyhjä",
+      "meaning": "empty",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6cc1",
+      "word": "sisäänkäynti",
+      "meaning": "entrance",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5c3b",
+      "word": "kirjekuori",
+      "meaning": "envelope",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2dcc",
+      "word": "pyyhekumi",
+      "meaning": "eraser",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0ff1",
+      "word": "jännittävä",
+      "meaning": "exciting",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "f67f",
+      "word": "jokainen",
+      "meaning": "everyone",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "0b0f",
+      "word": "innoissaan",
+      "meaning": "excited",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3549",
+      "word": "uloskäynti",
+      "meaning": "exit",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "df00",
+      "word": "aikainen",
+      "meaning": "early",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3d28",
+      "word": "liukuportaat",
+      "meaning": "escalator",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ad6f",
+      "word": "syödä",
+      "meaning": "eat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "6a22",
+      "word": "palomies",
+      "meaning": "firefighter",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5ea9",
+      "word": "haltijatar",
+      "meaning": "fairy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "71e1",
+      "word": "pudota",
+      "meaning": "drop",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "47be",
+      "word": "kaatua",
+      "meaning": "fall",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "fc5b",
+      "word": "kasvot",
+      "meaning": "face",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "1bb9",
+      "word": "hiukset",
+      "meaning": "hair",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5193",
+      "word": "otsa",
+      "meaning": "forehead",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "e4b2",
+      "word": "kulmakarva",
+      "meaning": "eyebrow",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "7b94",
+      "word": "silmäripset",
+      "meaning": "eyelashes",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "17f5",
+      "word": "silmä",
+      "meaning": "eye",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "b0b6",
+      "word": "nenä",
+      "meaning": "nose",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "2ff1",
+      "word": "huuli",
+      "meaning": "lip",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "215f",
+      "word": "suu",
+      "meaning": "mouth",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "98cf",
+      "word": "hampaat",
+      "meaning": "teeth",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "word": "leuka",
+      "meaning": "chin",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": "",
+      "id": "c2d2"
+    },
+    {
+      "id": "36b0",
+      "word": "poski",
+      "meaning": "cheek",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "8eab",
+      "word": "korva",
+      "meaning": "ear",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "a19a",
+      "word": "tuuletin",
+      "meaning": "fan",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4f86",
+      "word": "nopea",
+      "meaning": "fast",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5b0c",
+      "word": "kaukana",
+      "meaning": "far",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "822a",
+      "word": "maanviljelija",
+      "meaning": "farmer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "3750",
+      "word": "tuntua",
+      "meaning": "feel",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "5e46",
+      "word": "sulka",
+      "meaning": "feather",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "76d5",
+      "word": "aita",
+      "meaning": "fence",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "d669",
+      "word": "riidellä",
+      "meaning": "to fight",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "4cbf",
+      "word": "tuli",
+      "meaning": "fire",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
     }
   ]
 }

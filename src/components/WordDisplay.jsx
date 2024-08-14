@@ -10,15 +10,13 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
 
     const handleMeaningClick = () => {
       onMeaningClick()
-      toggleMeaning(false)
       if (audioRef.current)
       {
         audioRef.current.currentTime = 0
         audioRef.current.play()
       }
       else
-        console.log("couldn't find")
-        
+        console.log("couldn't find audio file")
     }
   
     return (

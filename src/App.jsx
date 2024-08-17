@@ -5,7 +5,7 @@ import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
 
 function App() {
-  const [words, setWords] = useState([])
+  const [words, setWords] = useState(null)
   const [searchFilter, setFilter] = useState('')
   const [newWord, setNewWord] = useState('')
   const [newMeaning, setNewMeaning] = useState('')
@@ -23,6 +23,9 @@ function App() {
     wordService.getAll().then(ws => {
       setWords(ws)
   })}, [])
+
+  if (!words || typeof words === 'string')
+    return null
 
   const updateFilter = newFilter => {
     setFilter(newFilter.trim().toLowerCase())

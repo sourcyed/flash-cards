@@ -1,10 +1,9 @@
 import { useRef } from 'react'
+import correctSound from '/correct.mp3'
 
 function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
     if (word === null)
       return (<br/>)
-
-    const audioSrc = "src/assets/audio/correct.mp3"
 
     const audioRef = useRef(null)
 
@@ -22,7 +21,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
     return (
       <div>
         <audio ref={audioRef}>
-          <source src={audioSrc} type='audio/mpeg'/>
+          <source src={correctSound} type='audio/mpeg'/>
           Your browser does not support the audio element.
         </audio>
         <table>

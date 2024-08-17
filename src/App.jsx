@@ -38,7 +38,7 @@ function App() {
     e.preventDefault()
     if (newWord.trim() === '') return
 
-    const word = { id: newWord, word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
+    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
    
     const duplicate = words.find(w => w.word === newWord)
     

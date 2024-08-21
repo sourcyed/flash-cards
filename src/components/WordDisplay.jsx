@@ -1,11 +1,14 @@
 import { useRef } from 'react'
 import correctSound from '/correct.mp3'
+import tts from '../services/tts'
 
 function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
     if (word === null)
       return (<br/>)
 
     const audioRef = useRef(null)
+
+    tts.speak(word.word)
 
     const handleMeaningClick = () => {
       onMeaningClick()

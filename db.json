@@ -2263,6 +2263,462 @@
       "sentence": "",
       "sentenceMeaning": "",
       "picture": ""
+    },
+    {
+      "id": "poikkihuilu",
+      "word": "poikkihuilu",
+      "meaning": "flute",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "taittaa",
+      "word": "taittaa",
+      "meaning": "to fold",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "jauhoja",
+      "word": "jauhoja",
+      "meaning": "flour",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "lentää",
+      "word": "lentää",
+      "meaning": "to fly",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "seurata",
+      "word": "seurata",
+      "meaning": "to follow",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "haarukka",
+      "word": "haarukka",
+      "meaning": "fork",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ilmainen",
+      "word": "ilmainen",
+      "meaning": "free",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "jalanjälki",
+      "word": "jalanjälki",
+      "meaning": "footprint",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "suihkulähde",
+      "word": "suihkulähde",
+      "meaning": "fountain",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "jäätyä",
+      "word": "jäätyä",
+      "meaning": "to freeze",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "unohtaa",
+      "word": "unohtaa",
+      "meaning": "forget",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kettu",
+      "word": "kettu",
+      "meaning": "fox",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ranskalaiset",
+      "word": "ranskalaiset",
+      "meaning": "french fries",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "etupuoli",
+      "word": "etupuoli",
+      "meaning": "front",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "edessä",
+      "word": "edessä",
+      "meaning": "in front of",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "turkki",
+      "word": "turkki",
+      "meaning": "fur",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "katso synkästi",
+      "word": "katso synkästi",
+      "meaning": "to frown",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "huonekalu",
+      "word": "huonekalu",
+      "meaning": "furniture",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "sammakko",
+      "word": "sammakko",
+      "meaning": "frog",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "täysi",
+      "word": "täysi",
+      "meaning": "full",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "puutarha",
+      "word": "puutarha",
+      "meaning": "garden",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "antelias",
+      "word": "antelias",
+      "meaning": "generous",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "saada",
+      "word": "saada",
+      "meaning": "get",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "autotalli",
+      "word": "autotalli",
+      "meaning": "garage",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "henki",
+      "word": "henki",
+      "meaning": "genie",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kummitus",
+      "word": "kummitus",
+      "meaning": "ghost",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "silmäläsit",
+      "word": "silmäläsit",
+      "meaning": "glasses",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kirahvi",
+      "word": "kirahvi",
+      "meaning": "giraffe",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "antaa",
+      "word": "antaa",
+      "meaning": "give",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kartapallo",
+      "word": "kartapallo",
+      "meaning": "globe",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "hansikas",
+      "word": "hansikas",
+      "meaning": "glove",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "maali",
+      "word": "maali",
+      "meaning": "goal",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "liima",
+      "word": "liima",
+      "meaning": "glue",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kultakala",
+      "word": "kultakala",
+      "meaning": "goldfish",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "mennä",
+      "word": "mennä",
+      "meaning": "to go",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "lapsenlapsi",
+      "word": "lapsenlapsi",
+      "meaning": "grandchild",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "viinirypäle",
+      "word": "viinirypäle",
+      "meaning": "grape",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "vihreät pavut",
+      "word": "vihreät pavut",
+      "meaning": "green beans",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "isovanhemmat",
+      "word": "isovanhemmat",
+      "meaning": "grandparents",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "greippi",
+      "word": "greippi",
+      "meaning": "grapefruit",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "arvata",
+      "word": "arvata",
+      "meaning": "to guess",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ruoho",
+      "word": "ruoho",
+      "meaning": "grass",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kitara",
+      "word": "kitara",
+      "meaning": "guitar",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kampaaja",
+      "word": "kampaaja",
+      "meaning": "hairdresser",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kinkku",
+      "word": "kinkku",
+      "meaning": "ham",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "hiustenkuivaaja",
+      "word": "hiustenkuivaaja",
+      "meaning": "hair dryer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "hiusharja",
+      "word": "hiusharja",
+      "meaning": "hair brush",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "puoli",
+      "word": "puoli",
+      "meaning": "half",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "vasara",
+      "word": "vasara",
+      "meaning": "hammer",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "komea",
+      "word": "komea",
+      "meaning": "handsome",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "kova",
+      "word": "kova",
+      "meaning": "hard",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "ripustaa",
+      "word": "ripustaa",
+      "meaning": "to hang",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "huuliharppu",
+      "word": "huuliharppu",
+      "meaning": "harmonica",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "hattu",
+      "word": "hattu",
+      "meaning": "hat",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "iloinen",
+      "word": "iloinen",
+      "meaning": "happy",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "harppu",
+      "word": "harppu",
+      "meaning": "harp",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
+    },
+    {
+      "id": "vihata",
+      "word": "vihata",
+      "meaning": "to hate",
+      "sentence": "",
+      "sentenceMeaning": "",
+      "picture": ""
     }
   ]
 }

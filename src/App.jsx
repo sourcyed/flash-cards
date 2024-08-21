@@ -42,7 +42,7 @@ function App() {
 
   const addWord = e => {
     e.preventDefault()
-    if (newWord.trim() === '') return
+    if (newWord.trim() === '' || newMeaning.trim() === '') return
 
     const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
    

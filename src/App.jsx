@@ -3,6 +3,7 @@ import './App.css'
 import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
+import tts from './services/tts'
 
 function App() {
   const [words, setWords] = useState(null)
@@ -23,6 +24,8 @@ function App() {
     wordService.getAll().then(ws => {
       setWords(ws)
   })}, [])
+
+  useEffect(() => {if (highlightedWord) tts.speak(highlightedWord.word)}, [highlightedWord, showMeaning])
 
   if (!words || typeof words === 'string')
     return null

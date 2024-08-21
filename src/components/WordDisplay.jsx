@@ -1,14 +1,15 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import correctSound from '/correct.mp3'
-import tts from '../services/tts'
 
 function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
-    if (word === null)
-      return (<br/>)
+  if (word === null)
+    return (<br/>)
 
     const audioRef = useRef(null)
 
-    tts.speak(word.word)
+    const handleWordClick = () => {
+      toggleMeaning(!showMeaning)
+    }
 
     const handleMeaningClick = () => {
       onMeaningClick()
@@ -30,7 +31,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
         <table>
           <tbody>
             <tr>
-              <td><button className='clickable-text' onClick={() => toggleMeaning(!showMeaning)}><strong>{word.word}</strong></button></td>
+              <td><button className='clickable-text' onClick={handleWordClick}><strong>{word.word}</strong></button></td>
             </tr>
             <tr>
               <td>

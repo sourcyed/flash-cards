@@ -1,4 +1,9 @@
 function speak(word) {
+    if (!word)
+      return
+
+    speechSynthesis.cancel()
+
     // Create a SpeechSynthesisUtterance
     const utterance = new SpeechSynthesisUtterance(word);
   

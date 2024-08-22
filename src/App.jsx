@@ -32,10 +32,13 @@ function App() {
       
   useEffect(() => {
     if (highlightedWord) {
-      const query = highlightedWord.meaning
-      photoService.getPhoto(query)
-      .then(r => setPhoto(r.photo))
-      .catch(e => console.log("can't load image"))
+      if (highlightedWord.picture)
+        setPhoto(highlightedWord.picture)
+      else {
+        photoService.getPhoto(highlightedWord.id)
+        .then(r => setPhoto(r.photo))
+        .catch(e => setPhoto(null) && console.log("can't load image"))
+      }
     }
   }, [highlightedWord])
 

@@ -1,7 +1,8 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import correctSound from '/correct.mp3'
 
-function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
+
+function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, photo } ) {
   if (word === null)
     return (<br/>)
 
@@ -21,7 +22,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
       else
         console.log("couldn't find audio file")
     }
-  
+
     return (
       <div>
         <audio ref={audioRef}>
@@ -37,6 +38,13 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick } ) {
               <td>
                 {!showMeaning ? '' : 
                   <button className='clickable-text' onClick={handleMeaningClick}><small><em>{word.meaning}</em></small></button>
+                }
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {!showMeaning || !photo ? '' :
+                  <img src={photo} alt="" />
                 }
               </td>
             </tr>

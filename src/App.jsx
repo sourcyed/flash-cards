@@ -4,6 +4,7 @@ import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
 import tts from './services/tts'
+import photoService from './services/photos'
 
 function App() {
   const [words, setWords] = useState(null)
@@ -19,13 +20,24 @@ function App() {
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
-
+  const [photo, setPhoto] = useState(null)
+  
+  
   useEffect(() => {
     wordService.getAll().then(ws => {
       setWords(ws)
-  })}, [])
-
+    })}, [])
+    
   useEffect(() => {if (highlightedWord) tts.speak(highlightedWord.word)}, [highlightedWord, showMeaning])
+      
+  useEffect(() => {
+    if (highlightedWord) {
+      const query = highlightedWord.meaning
+      photoService.getPhoto(query)
+      .then(r => setPhoto(r.photo))
+      .catch(e => console.log("can't load image"))
+    }
+  }, [highlightedWord])
 
   if (!words || typeof words === 'string')
     return null
@@ -145,7 +157,7 @@ function App() {
         <h3>Words</h3>
         <h4>correct guesses: {correctGuesses}</h4>
         <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} />
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} photo={photo}/>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         <br />
         offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>

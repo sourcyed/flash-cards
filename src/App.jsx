@@ -36,7 +36,12 @@ function App() {
         setPhoto(highlightedWord.picture)
       else {
         photoService.getPhoto(highlightedWord.id)
-        .then(r => setPhoto(r.photo))
+        .then(r => {
+          const wordWithPic = r.wordWithPic
+          setHighlight(wordWithPic)
+          setPhoto(wordWithPic.picture)
+          setWords(words.map(w => w.id !== wordWithPic.id ? w : wordWithPic))
+        })
         .catch(e => setPhoto(null) && console.log("can't load image"))
       }
     }

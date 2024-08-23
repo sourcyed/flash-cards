@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
@@ -28,7 +28,10 @@ function App() {
       setWords(ws)
     })}, [])
     
-  useEffect(() => {if (highlightedWord) tts.speak(highlightedWord.word)}, [highlightedWord, showMeaning])
+  useEffect(() => {
+    if (highlightedWord) 
+      tts.speak(highlightedWord.word)
+    }, [highlightedWord, showMeaning])
       
   useEffect(() => {
     if (highlightedWord) {
@@ -38,9 +41,8 @@ function App() {
         photoService.getPhoto(highlightedWord.id)
         .then(r => {
           const wordWithPic = r.wordWithPic
-          setHighlight(wordWithPic)
+          highlightedWord.picture = wordWithPic.picture
           setPhoto(wordWithPic.picture)
-          setWords(words.map(w => w.id !== wordWithPic.id ? w : wordWithPic))
         })
         .catch(e => setPhoto(null) && console.log("can't load image"))
       }

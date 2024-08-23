@@ -40,9 +40,8 @@ function App() {
       else {
         photoService.getPhoto(highlightedWord.id)
         .then(r => {
-          const wordWithPic = r.wordWithPic
-          highlightedWord.picture = wordWithPic.picture
-          setPhoto(wordWithPic.picture)
+          highlightedWord.picture = r
+          setPhoto(r)
         })
         .catch(e => setPhoto(null) && console.log("can't load image"))
       }

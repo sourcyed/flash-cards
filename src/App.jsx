@@ -5,6 +5,7 @@ import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
 import tts from './services/tts'
 import photoService from './services/photos'
+import authService from './services/auth'
 
 function App() {
   const [words, setWords] = useState(null)
@@ -21,7 +22,8 @@ function App() {
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
   const [photo, setPhoto] = useState(null)
-  
+  const [password, setPassword] = useState('')
+  const [authed, setAuthed] = useState(false)
   
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -63,6 +65,9 @@ function App() {
 
   const addWord = e => {
     e.preventDefault()
+
+    if (!authed) return
+
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
     const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
@@ -96,6 +101,8 @@ function App() {
   }
 
   const delHandler = word => {
+    if (!authed) return
+    
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
       wordService.del(word).then(() => {
         setWords(words.filter(w => w.id !== word.id))
@@ -144,6 +151,11 @@ function App() {
     highlightRandomWord(newSet)
   }
 
+  const handleAuth = e => {
+    e.preventDefault()
+    authService.auth(password).then(r => setAuthed(r))
+  }
+
   return (
     <div>
       <form onSubmit={addWord}>
@@ -173,6 +185,10 @@ function App() {
         <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
         <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>
+        <form onSubmit={handleAuth}>
+          <input type="text" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
+          <button type='submit'>auth</button>
+        </form>
       </div>
     </div>
   )

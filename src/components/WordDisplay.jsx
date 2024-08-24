@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react'
 import correctSound from '/correct.mp3'
 
 
-function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, photo } ) {
+function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, picture, swapMeanings } ) {
   if (word === null)
     return (<br/>)
 
@@ -32,19 +32,19 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, photo 
         <table>
           <tbody>
             <tr>
-              <td><button className='clickable-text' onClick={handleWordClick}><strong>{word.word}</strong></button></td>
+              <td><button className='clickable-text' onClick={handleWordClick}><strong>{!swapMeanings ? word.word : word.meaning}</strong></button></td>
             </tr>
             <tr>
               <td>
                 {!showMeaning ? '' : 
-                  <button className='clickable-text' onClick={handleMeaningClick}><small><em>{word.meaning}</em></small></button>
+                  <button className='clickable-text' onClick={handleMeaningClick}><small><em>{!swapMeanings ? word.meaning : word.word}</em></small></button>
                 }
               </td>
             </tr>
             <tr>
               <td>
-                {!showMeaning || !photo ? '' :
-                  <img src={photo} alt="" />
+                {!showMeaning || !picture ? '' :
+                  <img src={picture} alt="" />
                 }
               </td>
             </tr>

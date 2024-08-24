@@ -24,6 +24,7 @@ function App() {
   const [photo, setPhoto] = useState(null)
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
+  const [swapMeanings, setSwapMeanings] = useState(false)
   
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -32,7 +33,7 @@ function App() {
     
   useEffect(() => {
     if (highlightedWord) 
-      tts.speak(highlightedWord.word)
+      tts.speak(!swapMeanings ? highlightedWord.word : highlightedWord.meaning)
     }, [highlightedWord, showMeaning])
       
   useEffect(() => {
@@ -102,7 +103,7 @@ function App() {
 
   const delHandler = word => {
     if (!authed) return
-    
+
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
       wordService.del(word).then(() => {
         setWords(words.filter(w => w.id !== word.id))
@@ -178,13 +179,16 @@ function App() {
         <h3>Words</h3>
         <h4>correct guesses: {correctGuesses}</h4>
         <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} photo={photo}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={photo} swapMeanings={swapMeanings}/>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
-        <br />
+        &nbsp;
         offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>
         <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
-        <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords}/>
+        &nbsp;
+        <button onClick={() => setSwapMeanings(!swapMeanings)}>swap</button>
+        &nbsp;
+        <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords} swapMeanings={swapMeanings} />
         <form onSubmit={handleAuth}>
           <input type="text" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
           <button type='submit'>auth</button>

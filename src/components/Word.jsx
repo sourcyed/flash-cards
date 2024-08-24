@@ -1,4 +1,4 @@
-function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
+function Word( { word, wordNumber, onHighlight, showMeanings, delHandler, swapMeanings }) {
   
     return (
       <tr>
@@ -8,11 +8,11 @@ function Word( { word, wordNumber, onHighlight, showMeanings, delHandler }) {
         </td>
         <td>
           <button className='clickable-text' onClick={() => onHighlight(word)}>
-            {word.word}
+            {!swapMeanings ? word.word : word.meaning}
           </button> 
         </td>
         <td className='wordMeaning'>
-          <small>{showMeanings ? word.meaning : ''}</small>
+          <small>{showMeanings ? (!swapMeanings ? word.meaning : word.word) : ''}</small>
         </td>
       </tr>
     )

@@ -98,6 +98,8 @@ function App() {
 
   const highlightHandler = word => {
     toggleMeaning(false);
+    if (word !== highlightedWord)
+      setPhoto(null)
     setHighlight(word)
   }
 

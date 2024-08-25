@@ -71,7 +71,7 @@ function App() {
 
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
-    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture}
+    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture, i: word.length}
    
     const duplicate = words.find(w => w.word === newWord)
     
@@ -139,7 +139,9 @@ function App() {
   }
 
   const visibleWords = () => {
-    let availableWords = words
+    let availableWords = words.toReversed().map((w, i) => {
+      return {...w, i: i+1}
+    })
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
     if (maxWords)

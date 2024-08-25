@@ -21,7 +21,7 @@ function App() {
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
-  const [photo, setPhoto] = useState(null)
+  const [highlightedPicture, setHighlightedPicture] = useState(null)
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
@@ -39,14 +39,14 @@ function App() {
   useEffect(() => {
     if (highlightedWord) {
       if (highlightedWord.picture)
-        setPhoto(highlightedWord.picture)
+        setHighlightedPicture(highlightedWord.picture)
       else {
         photoService.getPhoto(highlightedWord.id)
         .then(r => {
           highlightedWord.picture = r
-          setPhoto(r)
+          setHighlightedPicture(r)
         })
-        .catch(e => setPhoto(null) && console.log("can't load image"))
+        .catch(e => setHighlightedPicture(null) && console.log("can't load image"))
       }
     }
   }, [highlightedWord])
@@ -99,7 +99,7 @@ function App() {
   const highlightHandler = word => {
     toggleMeaning(false);
     if (word !== highlightedWord)
-      setPhoto(null)
+      setHighlightedPicture(null)
     setHighlight(word)
   }
 
@@ -181,7 +181,7 @@ function App() {
         <h3>Words</h3>
         <h4>correct guesses: {correctGuesses}</h4>
         <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={photo} swapMeanings={swapMeanings}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={highlightedPicture} swapMeanings={swapMeanings}/>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         &nbsp;
         offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>

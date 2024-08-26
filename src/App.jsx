@@ -71,7 +71,7 @@ function App() {
 
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
-    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture, i: word.length}
+    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture, i: words.length}
    
     const duplicate = words.find(w => w.word === newWord)
     

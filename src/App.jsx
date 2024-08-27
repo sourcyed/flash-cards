@@ -62,6 +62,10 @@ function App() {
     setMaxWords(m === '' ? null : parseInt(m))
   }
 
+  const updateWordsOffset = o => {
+    setWordsOffset(o === '' ? null : parseInt(o))
+  }
+
   const handleInput = setFunc => event => setFunc(event.target.value)
 
   const addWord = e => {
@@ -145,7 +149,9 @@ function App() {
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
     if (maxWords)
-      availableWords = availableWords.slice(Math.max(availableWords.length - maxWords - wordsOffset, 0), Math.max(availableWords.length - wordsOffset, 0))
+      availableWords = wordsOffset >= 0
+        ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(maxWords + wordsOffset, availableWords.length))
+        : availableWords.slice(Math.max(availableWords.length - maxWords + wordsOffset, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
     return availableWords
   }
 
@@ -186,7 +192,7 @@ function App() {
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={highlightedPicture} swapMeanings={swapMeanings}/>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         &nbsp;
-        offset: <input type='number' style={{width: 50}} value={wordsOffset} onChange={e => setWordsOffset(e.target.value)}/>
+        offset: <input type='number' style={{width: 50}} value={wordsOffset !== null ? wordsOffset : ''} onChange={e => updateWordsOffset(e.target.value)}/>
         <br />
         Search: <input onChange={e => updateFilter(e.target.value)} value={searchFilter}/>
         &nbsp;

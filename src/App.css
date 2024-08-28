@@ -18,6 +18,10 @@ table td {
   word-wrap:break-word;
 }
 
+.long-text {
+  width: 330px;
+}
+
 .clickable-text {
   background: none;
   font-size: 1em;

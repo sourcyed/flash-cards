@@ -169,12 +169,15 @@ function App() {
 
   return (
     <div>
-      <form onSubmit={addWord}>
+      <form onSubmit={addWord} style={{ border: '1px solid' }}>
         <h3>Add new word</h3>
         <p>
-          <input onChange={handleInput(setNewWord)} value={newWord}/> 
+          <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/> 
           &nbsp; : &nbsp;
-          <input onChange={handleInput(setNewMeaning)} value={newMeaning}/>
+          <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
+        </p>
+        <p>
+          <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' className='long-text'/>
           {/* &nbsp; : &nbsp;
           <input onChange={handleInput(setSentence)} value={newSentence} />
           &nbsp; : &nbsp;
@@ -182,14 +185,20 @@ function App() {
           &nbsp; : &nbsp;
           <input type="file" /> */}
         </p>
-        <button type="submit">add</button>
+        <p>
+          <button type="submit">add</button>
+        </p>
       </form>
 
       <div>
-        <h3>Words</h3>
+        <p>
+          <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
+        </p>
         <h4>correct guesses: {correctGuesses}</h4>
-        <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
+
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={highlightedPicture} swapMeanings={swapMeanings}/>
+        
+        <h3>Words</h3>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         &nbsp;
         offset: <input type='number' style={{width: 50}} value={wordsOffset !== null ? wordsOffset : ''} onChange={e => updateWordsOffset(e.target.value)}/>
@@ -200,7 +209,7 @@ function App() {
         &nbsp;
         <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords} swapMeanings={swapMeanings} />
         <form onSubmit={handleAuth}>
-          <input type="text" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
+          <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
           <button type='submit'>auth</button>
         </form>
       </div>

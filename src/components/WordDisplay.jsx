@@ -24,7 +24,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, pictur
     }
 
     return (
-      <div>
+      <div className='flash-card'>
         <audio ref={audioRef}>
           <source src={correctSound} type='audio/mpeg'/>
           Your browser does not support the audio element.
@@ -38,6 +38,13 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onMeaningClick, pictur
               <td>
                 {!showMeaning ? '' : 
                   <button className='clickable-text' onClick={handleMeaningClick}><small><em>{!swapMeanings ? word.meaning : word.word}</em></small></button>
+                }
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {!showMeaning ? '' :
+                  <p className='long-text'>{word.sentence}</p>
                 }
               </td>
             </tr>

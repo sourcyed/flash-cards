@@ -73,9 +73,5 @@ button:focus-visible {
 }
 
 .long-text {
-  width: 330px;
-}
-
-.flash-card {
-  border: solid 1px;
+  width: 100%;
 }

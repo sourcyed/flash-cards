@@ -174,35 +174,16 @@ function App() {
 
   return (
     <div>
-      <form onSubmit={addWord} style={{ border: '1px solid' }}>
-        <h3>Add new word</h3>
-        <p>
-          <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/> 
-          &nbsp; : &nbsp;
-          <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
-        </p>
-        <p>
-          <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' className='long-text'/>
-          {/* &nbsp; : &nbsp;
-          <input onChange={handleInput(setSentence)} value={newSentence} />
-          &nbsp; : &nbsp;
-          <input onChange={handleInput(setSentenceMeaning)} value={newSentenceMeaning} />
-          &nbsp; : &nbsp;
-          <input type="file" /> */}
-        </p>
-        <p>
-          <button type="submit">add</button>
-        </p>
-      </form>
-
       <div>
-        <p>
+        {/* <p>
           <button onClick={() => highlightRandomWord()}>random</button>
-        </p>
+        </p> */}
         <h4>correct guesses: {correctGuesses}</h4>
 
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings}/>
-        
+      </div>
+
+      <div>
         <h3>Words</h3>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>
         &nbsp;
@@ -213,9 +194,32 @@ function App() {
         <button onClick={() => setSwapMeanings(!swapMeanings)}>swap</button>
         &nbsp;
         <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords} swapMeanings={swapMeanings} />
+      </div>
+
+      <div>
+        <form onSubmit={addWord} style={{ border: '1px solid' }}>
+          <h3>Add new word</h3>
+          <p>
+            <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/> 
+            &nbsp; : &nbsp;
+            <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
+          </p>
+          <p>
+            <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
+            {/* &nbsp; : &nbsp;
+            <input onChange={handleInput(setSentence)} value={newSentence} />
+            &nbsp; : &nbsp;
+            <input onChange={handleInput(setSentenceMeaning)} value={newSentenceMeaning} />
+            &nbsp; : &nbsp;
+            <input type="file" /> */}
+          </p>
+          <p>
+            <button type="submit">add</button>
+          </p>
+        </form>
         <form onSubmit={handleAuth}>
-          <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
-          <button type='submit'>auth</button>
+            <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
+            <button type='submit'>auth</button>
         </form>
       </div>
     </div>

@@ -25,7 +25,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
     }
 
     return (
-      <div>
+      <div className='flash-card'>
         <audio ref={audioRef}>
           <source src={correctSound} type='audio/mpeg'/>
           Your browser does not support the audio element.
@@ -35,7 +35,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
           !showMeaning
             ? <button className='pulse' onClick={handleWordClick} style={ {width: '100%', height: '100%'}}><h3>{!swapMeanings ? word.word : word.meaning}</h3></button>
             : 
-              <table className='flash-card' style={ {width: '100%'}}>
+              <table style={ {width: '100%'}}>
                 <tbody>
                   <tr>
                     <td>

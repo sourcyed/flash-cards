@@ -7,6 +7,9 @@
     }
   }
 
+.flash-card {
+  border: black groove 5px;
+}
 
 .pulse {
     animation: pulse-animation 2s infinite;

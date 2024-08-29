@@ -84,6 +84,7 @@ function App() {
     if (duplicate) {
       if (window.confirm(`${newWord} already exists in the dictionary, update the meaning?`)) {
         word.id = duplicate.id
+        word.picture = ''
         wordService.update(word).then(nW => {
           setWords(words.map(w => w.id !== nW.id ? w : nW))
           if (highlightedWord && highlightedWord.id === nW.id)

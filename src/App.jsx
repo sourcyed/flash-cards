@@ -54,6 +54,8 @@ function App() {
   if (!words || typeof words === 'string')
     return null
 
+  
+
   const updateFilter = newFilter => {
     setFilter(newFilter.trim().toLowerCase())
   }
@@ -118,7 +120,7 @@ function App() {
     }
   }
 
-  const highlightRandomWord = (wordsToExclude) => {
+  const highlightRandomWord = (wordsToExclude = correctlyGuessedWords) => {
     const visible = visibleWords()
     const availableWords = visible.filter(w => !wordsToExclude.has(w.id))
     if (wordsToExclude.size >= visible.length) {
@@ -155,7 +157,7 @@ function App() {
     return availableWords
   }
 
-  const handleMeaningClick = () => {
+  const handleRightClick = () => {
     setCorrectGuesses(correctGuesses + 1)
     const newSet = (new Set(correctlyGuessedWords)).add(highlightedWord.id)
     setCorrectlyGuessedWords(newSet)
@@ -166,6 +168,9 @@ function App() {
     e.preventDefault()
     authService.auth(password).then(r => setAuthed(r))
   }
+
+  if (!highlightedWord)
+    highlightRandomWord()
 
   return (
     <div>
@@ -192,11 +197,11 @@ function App() {
 
       <div>
         <p>
-          <button onClick={() => highlightRandomWord(correctlyGuessedWords)}>random</button>
+          <button onClick={() => highlightRandomWord()}>random</button>
         </p>
         <h4>correct guesses: {correctGuesses}</h4>
 
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onMeaningClick={handleMeaningClick} picture={highlightedPicture} swapMeanings={swapMeanings}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings}/>
         
         <h3>Words</h3>
         max words: <input type='number' style={{width: 50}} value={maxWords !== null ? maxWords : ''} onChange={e => updateMaxWords(e.target.value)}/>

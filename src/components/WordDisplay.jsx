@@ -54,7 +54,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   {!showMeaning ? '' :
                   <tr>
                     <td>
-                        <p className='long-text'>{word.sentence}</p>
+                        <small>{word.sentence}</small>
                     </td>
                   </tr>
                   }

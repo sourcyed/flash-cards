@@ -70,10 +70,10 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   <tr>
                     <td><table><tr>
                       <td>
-                        <button onClick={onWrongClick} style={{backgroundColor: 'darkred'}}>wrong</button>
+                        <button onClick={onWrongClick} id='wrong-button'>wrong</button>
                       </td>
                       <td>
-                        <button onClick={handRightClick} style={{backgroundColor: 'darkgreen'}}>right</button>
+                        <button onClick={handRightClick} id='right-button'>right</button>
                       </td>
                       </tr></table></td> 
                   </tr>

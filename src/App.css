@@ -26,7 +26,6 @@ table td {
   background: none;
   font-size: 1em;
   width: 175px;
-  filter: drop-shadow(0 0 1em #ffffff);
 }
 
 .clickable-text:hover {
@@ -47,15 +46,25 @@ table td {
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+@media (prefers-color-scheme: light) {
+  .delete:hover {
+    background-color: red;
+  }
+
+  .clickable-text {
+    filter: drop-shadow(0 0 0.75em black);
+  }
 }
 
-.delete:hover {
-  background-color: darkred;
+@media (prefers-color-scheme: dark) {
+  .delete:hover {
+    background-color: darkred;
+  }
+
+  .clickable-text {
+    filter: drop-shadow(0 0 1em white);
+  }
 }
 
 @keyframes logo-spin {

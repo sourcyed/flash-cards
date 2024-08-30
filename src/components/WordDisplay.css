@@ -1,4 +1,38 @@
-@keyframes pulse-animation {
+@media (prefers-color-scheme: light) {
+  .flash-card {
+    border: lightgray groove 5px;
+  }
+  #wrong-button {
+    background-color: red;
+    color: white;
+  }
+  #right-button {
+    background-color: green;
+    color: white;
+  }
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .flash-card {
+    border: black groove 5px;
+  }
+  #wrong-button {
+    background-color: darkred;
+    color: white;
+  }
+  #right-button {
+    background-color: darkgreen;
+    color: white;
+  }
+  @keyframes pulse-animation {
     0% {
       box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
     }
@@ -6,10 +40,9 @@
       box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
     }
   }
-
-.flash-card {
-  border: black groove 5px;
 }
+
+
 
 .pulse {
     animation: pulse-animation 2s infinite;

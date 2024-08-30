@@ -57,7 +57,7 @@ function App() {
   
 
   const updateFilter = newFilter => {
-    setFilter(newFilter.trim().toLowerCase())
+    setFilter(newFilter.toLowerCase())
   }
 
   const updateMaxWords = m => {

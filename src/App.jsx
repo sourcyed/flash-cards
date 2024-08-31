@@ -54,23 +54,26 @@ function App() {
     }
   }, [highlightedWord])
 
-  const handleKeyDown = e => {
-    const key = e.key
-    if (!showMeaning) {
-      if (key === 'Enter')
-        toggleMeaning(true)
-    } 
-    else {
-      if (key === 'ArrowLeft')
-        highlightRandomWord()
-      if (key === 'ArrowRight')
-        handleRightClick()
-    }
-  }
-
+  
   useEffect(() => {
-    document.removeEventListener('keydown', handleKeyDown)
-    document.addEventListener('keydown', handleKeyDown)
+    const handleKeyUp = e => {
+      const repeat = e.repeat
+      if (repeat)
+        return
+      const key = e.key
+      if (!showMeaning) {
+        if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
+          toggleMeaning(true)
+      } 
+      else {
+        if (key === 'ArrowLeft')
+          highlightRandomWord()
+        if (key === 'ArrowRight')
+          handleRightClick()
+      }
+    }
+    document.addEventListener('keyup', handleKeyUp)
+    return () => document.removeEventListener('keyup', handleKeyUp)
   },[showMeaning])
 
   if (!words || typeof words === 'string')

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
+import correctSound from '/correct.mp3'
 import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
 import wordService from './services/words'
@@ -25,6 +26,8 @@ function App() {
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
+
+  const audioRef = useRef(null)
   
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -50,6 +53,25 @@ function App() {
       }
     }
   }, [highlightedWord])
+
+  const handleKeyDown = e => {
+    const key = e.key
+    if (!showMeaning) {
+      if (key === 'Enter')
+        toggleMeaning(true)
+    } 
+    else {
+      if (key === 'ArrowLeft')
+        highlightRandomWord()
+      if (key === 'ArrowRight')
+        handleRightClick()
+    }
+  }
+
+  useEffect(() => {
+    document.removeEventListener('keydown', handleKeyDown)
+    document.addEventListener('keydown', handleKeyDown)
+  },[showMeaning])
 
   if (!words || typeof words === 'string')
     return null
@@ -159,6 +181,14 @@ function App() {
   }
 
   const handleRightClick = () => {
+    if (audioRef.current)
+      {
+        audioRef.current.currentTime = 0
+        audioRef.current.play()
+      }
+      else
+        console.log("couldn't find audio file")
+
     setCorrectGuesses(correctGuesses + 1)
     const newSet = (new Set(correctlyGuessedWords)).add(highlightedWord.id)
     setCorrectlyGuessedWords(newSet)
@@ -175,6 +205,11 @@ function App() {
 
   return (
     <div>
+        <audio ref={audioRef}>
+          <source src={correctSound} type='audio/mpeg'/>
+          Your browser does not support the audio element.
+        </audio>
+
       <div>
         {/* <p>
           <button onClick={() => highlightRandomWord()}>random</button>

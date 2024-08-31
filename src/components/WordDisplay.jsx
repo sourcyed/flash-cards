@@ -1,5 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
-import correctSound from '/correct.mp3'
+import { useRef } from 'react'
 import './WordDisplay.css'
 
 
@@ -7,29 +6,19 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
   if (word === null)
     return (<br/>)
 
-    const audioRef = useRef(null)
+
 
     const handleWordClick = () => {
-      toggleMeaning(!showMeaning)
+      toggleMeaning(true)
     }
 
-    const handRightClick = () => {
+    const handleRightClick = () => {
       onRightClick()
-      if (audioRef.current)
-      {
-        audioRef.current.currentTime = 0
-        audioRef.current.play()
-      }
-      else
-        console.log("couldn't find audio file")
     }
 
     return (
       <div className='flash-card'>
-        <audio ref={audioRef}>
-          <source src={correctSound} type='audio/mpeg'/>
-          Your browser does not support the audio element.
-        </audio>
+        
 
         {
           !showMeaning
@@ -68,14 +57,14 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   }
                   
                   <tr>
-                    <td><table><tr>
+                    <td><table><tbody><tr>
                       <td>
                         <button onClick={onWrongClick} id='wrong-button'>wrong</button>
                       </td>
                       <td>
-                        <button onClick={handRightClick} id='right-button'>right</button>
+                        <button onClick={handleRightClick} id='right-button'>right</button>
                       </td>
-                      </tr></table></td> 
+                      </tr></tbody></table></td> 
                   </tr>
                 </tbody>
               </table>

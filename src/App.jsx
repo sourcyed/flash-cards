@@ -55,26 +55,22 @@ function App() {
   }, [highlightedWord])
 
   
-  useEffect(() => {
-    const handleKeyUp = e => {
-      const repeat = e.repeat
-      if (repeat)
-        return
-      const key = e.key
-      if (!showMeaning) {
-        if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
-          toggleMeaning(true)
-      } 
-      else {
-        if (key === 'ArrowLeft')
-          highlightRandomWord()
-        if (key === 'ArrowRight')
-          handleRightClick()
-      }
+  const handleKeyUp = e => {
+    const repeat = e.repeat
+    if (repeat)
+      return
+    const key = e.key
+    if (!showMeaning) {
+      if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
+        toggleMeaning(true)
+    } 
+    else {
+      if (key === 'ArrowLeft')
+        highlightRandomWord()
+      if (key === 'ArrowRight')
+        handleRightClick()
     }
-    document.addEventListener('keyup', handleKeyUp)
-    return () => document.removeEventListener('keyup', handleKeyUp)
-  },[showMeaning])
+  }
 
   if (!words || typeof words === 'string')
     return null
@@ -213,7 +209,7 @@ function App() {
           Your browser does not support the audio element.
         </audio>
 
-      <div>
+      <div id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
         {/* <p>
           <button onClick={() => highlightRandomWord()}>random</button>
         </p> */}

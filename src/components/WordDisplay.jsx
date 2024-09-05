@@ -1,8 +1,7 @@
-import { useRef } from 'react'
 import './WordDisplay.css'
 
 
-function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongClick, picture, swapMeanings } ) {
+function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongClick, picture, swapMeanings, replaceImage } ) {
   if (word === null)
     return (<br/>)
 
@@ -18,7 +17,6 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
 
     return (
       <div className='flash-card'>
-        
 
         {
           !showMeaning
@@ -51,7 +49,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   {!showMeaning || !picture ? '' :
                   <tr>
                     <td>
-                        <img src={picture} alt="" />
+                        <img src={picture} alt="" onClick={replaceImage}/>
                     </td>
                   </tr>
                   }

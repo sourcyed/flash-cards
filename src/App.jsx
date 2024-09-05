@@ -44,12 +44,7 @@ function App() {
       if (highlightedWord.picture)
         setHighlightedPicture(highlightedWord.picture)
       else {
-        photoService.getPhoto(highlightedWord.id)
-        .then(r => {
-          highlightedWord.picture = r
-          setHighlightedPicture(r)
-        })
-        .catch(e => setHighlightedPicture(null) && console.log("can't load image"))
+        replaceImage()
       }
     }
   }, [highlightedWord])
@@ -195,6 +190,17 @@ function App() {
     highlightRandomWord(newSet)
   }
 
+  const replaceImage = () => {
+    console.log('request new photo');
+    
+    photoService.getPhoto(highlightedWord.id)
+    .then(r => {
+      highlightedWord.picture = r
+      setHighlightedPicture(r)
+    })
+    .catch(e => setHighlightedPicture(null) && console.log("can't load image"))
+  }
+
   const handleAuth = e => {
     e.preventDefault()
     authService.auth(password).then(r => setAuthed(r))
@@ -216,7 +222,7 @@ function App() {
         </p> */}
         <h4>correct guesses: {correctGuesses}</h4>
 
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replaceImage={replaceImage}/>
       </div>
 
       <div>

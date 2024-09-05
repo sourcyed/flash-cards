@@ -172,10 +172,11 @@ function App() {
     })
     if (searchFilter.length > 0)
       availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
-    if (maxWords)
-      availableWords = wordsOffset >= 0
-        ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(maxWords + wordsOffset, availableWords.length))
-        : availableWords.slice(Math.max(availableWords.length - maxWords + wordsOffset, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
+    
+    const _maxWords = maxWords ? maxWords : availableWords.length
+    availableWords = wordsOffset >= 0
+      ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(_maxWords + wordsOffset, availableWords.length))
+      : availableWords.slice(Math.max(availableWords.length - _maxWords + wordsOffset + 1, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
     return availableWords
   }
 

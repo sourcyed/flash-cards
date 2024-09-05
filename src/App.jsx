@@ -32,7 +32,10 @@ function App() {
   useEffect(() => {
     wordService.getAll().then(ws => {
       setWords(ws)
-    })}, [])
+    }).catch(err => {
+      console.error("Can't load words from the database.")
+    })
+  }, [])
     
   useEffect(() => {
     if (highlightedWord) 
@@ -248,12 +251,9 @@ function App() {
           </p>
           <p>
             <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
-            {/* &nbsp; : &nbsp;
-            <input onChange={handleInput(setSentence)} value={newSentence} />
-            &nbsp; : &nbsp;
-            <input onChange={handleInput(setSentenceMeaning)} value={newSentenceMeaning} />
-            &nbsp; : &nbsp;
-            <input type="file" /> */}
+          </p>
+          <p>
+            <input type="checkbox" />
           </p>
           <p>
             <button type="submit">add</button>

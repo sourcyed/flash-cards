@@ -18,7 +18,6 @@ function App() {
   const [wordsOffset, setWordsOffset] = useState(0)
   const [newSentence, setSentence] = useState('')
   const [newSentenceMeaning, setSentenceMeaning] = useState('')
-  const [newPicture, setPicture] = useState('')
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
@@ -26,6 +25,7 @@ function App() {
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
+  const [pictureChecked, setPictureChecked] = useState(true)
 
   const audioRef = useRef(null)
   
@@ -96,8 +96,8 @@ function App() {
 
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
-    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: newPicture, i: words.length}
-   
+    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: pictureChecked ? '' : '/', i: words.length}
+    console.log(word.picture)
     const duplicate = words.find(w => w.word === newWord)
     
     if (duplicate) {
@@ -119,7 +119,6 @@ function App() {
     setNewMeaning('')
     setSentence('')
     setSentenceMeaning('')
-    setPicture('')
   }
 
   const highlightHandler = word => {
@@ -253,7 +252,8 @@ function App() {
             <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
           </p>
           <p>
-            <input type="checkbox" />
+            <input id="picture-checkbox" type="checkbox" style={{width: 25}} checked={pictureChecked} onChange={(e => setPictureChecked(!pictureChecked))} />
+            <label htmlFor="picture-checkbox">Picture</label>
           </p>
           <p>
             <button type="submit">add</button>

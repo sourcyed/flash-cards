@@ -198,7 +198,7 @@ function App() {
     photoService.getPhoto(highlightedWord.id)
     .then(r => {
       highlightedWord.picture = r
-      setWords(words.max(x => x.id === highlightedWord.id ? highlightedWord : x))
+      setWords(words.map(x => x.id === highlightedWord.id ? highlightedWord : x))
       setHighlightedPicture(r)
     })
     .catch(e => setHighlightedPicture(null) && console.log("can't load image"))

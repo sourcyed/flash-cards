@@ -17,7 +17,6 @@ function App() {
   const [maxWords, setMaxWords] = useState(null)
   const [wordsOffset, setWordsOffset] = useState(0)
   const [newSentence, setSentence] = useState('')
-  const [newSentenceMeaning, setSentenceMeaning] = useState('')
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
@@ -89,6 +88,25 @@ function App() {
 
   const handleInput = setFunc => event => setFunc(event.target.value)
 
+  const fillWordInput = () => {
+    if (!highlightedWord) return
+    setNewWord(highlightedWord.word)
+    setNewMeaning(highlightedWord.meaning)
+    setSentence(highlightedWord.sentence)
+    setPictureChecked(highlightedWord.picture !== '/')
+  }
+
+  const clearWordInput = () => {
+    setNewWord('')
+    setNewMeaning('')
+    setSentence('')
+  }
+
+  const handleToggleMeaning = toggle => {
+    toggleMeaning(toggle)
+    toggle ? fillWordInput() : clearWordInput()
+  }
+  
   const addWord = e => {
     e.preventDefault()
 
@@ -96,7 +114,7 @@ function App() {
 
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
-    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, sentenceMeaning: newSentenceMeaning, picture: pictureChecked ? '' : '/', i: words.length}
+    const word = { word: newWord, meaning: newMeaning, sentence: newSentence, picture: pictureChecked ? '' : '/', i: words.length}
     console.log(word.picture)
     const duplicate = words.find(w => w.word === newWord)
     
@@ -117,11 +135,10 @@ function App() {
     setNewWord('')
     setNewMeaning('')
     setSentence('')
-    setSentenceMeaning('')
   }
 
   const highlightHandler = word => {
-    toggleMeaning(false);
+    handleToggleMeaning(false)
     if (word !== highlightedWord)
       setHighlightedPicture(null)
     setHighlight(word)
@@ -219,12 +236,9 @@ function App() {
         </audio>
 
       <div id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
-        {/* <p>
-          <button onClick={() => highlightRandomWord()}>random</button>
-        </p> */}
         <h4>correct guesses: {correctGuesses}</h4>
 
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={toggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replaceImage={replaceImage}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replaceImage={replaceImage}/>
       </div>
 
       <div>

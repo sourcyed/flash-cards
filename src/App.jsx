@@ -38,7 +38,7 @@ function App() {
     
   useEffect(() => {
     if (highlightedWord) 
-      tts.speak(!swapMeanings ? highlightedWord.word : highlightedWord.meaning)
+      tts.speak(!swapMeanings ? highlightedWord.word : (!showMeaning ? highlightedWord.meaning : highlightedWord.word))
     }, [highlightedWord, showMeaning])
       
   useEffect(() => {

@@ -209,8 +209,6 @@ function App() {
   }
 
   const replaceImage = () => {
-    console.log('request new photo');
-    
     photoService.getPhoto(highlightedWord.id)
     .then(r => {
       highlightedWord.picture = r

@@ -66,6 +66,8 @@ function App() {
         highlightRandomWord()
       if (key === 'ArrowRight')
         handleRightClick()
+      if (key === 'Enter')
+        replacePicture()
     }
   }
 

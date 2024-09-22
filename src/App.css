@@ -47,6 +47,8 @@ table td {
   transition: filter 300ms;
 }
 
+#reset-correctly-guessed
+
 @media (prefers-color-scheme: light) {
   .delete:hover {
     background-color: red;

@@ -57,16 +57,20 @@ function App() {
     if (repeat)
       return
     const key = e.key
-    if (!showMeaning) {
+
+    if (key === 'Backspace')
+      resetCorrectGuesses()
+
+    else if (!showMeaning) {
       if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
         toggleMeaning(true)
     } 
     else {
       if (key === 'ArrowLeft')
         highlightRandomWord()
-      if (key === 'ArrowRight')
+      else if (key === 'ArrowRight')
         handleRightClick()
-      if (key === 'Enter')
+      else if (key === 'Enter')
         replacePicture()
     }
   }
@@ -220,6 +224,11 @@ function App() {
     .catch(e => setHighlightedPicture(null) && console.log("can't load picture"))
   }
 
+  const resetCorrectGuesses = () => {
+    setCorrectGuesses(0);
+    setCorrectlyGuessedWords(new Set())
+  }
+
   const handleAuth = e => {
     e.preventDefault()
     authService.auth(password).then(r => setAuthed(r))
@@ -236,7 +245,11 @@ function App() {
         </audio>
 
       <div id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
-        <h4>correct guesses: {correctGuesses}</h4>
+        <h4> 
+          <button onClick={resetCorrectGuesses}>reset</button>
+          &nbsp;
+          correct guesses: {correctGuesses}
+        </h4>
 
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>

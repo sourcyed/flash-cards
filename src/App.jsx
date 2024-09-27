@@ -53,6 +53,8 @@ function App() {
 
   
   const handleKeyUp = e => {
+    if (highlightedWord === null) return
+
     const repeat = e.repeat
     if (repeat)
       return
@@ -164,13 +166,13 @@ function App() {
   const highlightRandomWord = (wordsToExclude = correctlyGuessedWords) => {
     const visible = visibleWords()
     const availableWords = visible.filter(w => !wordsToExclude.has(w.id))
+    
     if (wordsToExclude.size >= visible.length) {
       if (window.confirm('You guessed all the words correctly! Do you want to start over?')) {
         setCorrectGuesses(0)
         setCorrectlyGuessedWords(new Set())
       }
     }
-
     if (availableWords.length == 0) return highlightHandler(null)
     if (availableWords.length == 1) return highlightHandler(availableWords[0])
     while (true) {
@@ -234,7 +236,7 @@ function App() {
     authService.auth(password).then(r => setAuthed(r))
   }
 
-  if (!highlightedWord)
+  if (!highlightedWord && visibleWords().length > 0)
     highlightRandomWord()
 
   return (

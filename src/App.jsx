@@ -7,6 +7,7 @@ import wordService from './services/words'
 import tts from './services/tts'
 import photoService from './services/photos'
 import authService from './services/auth'
+import confetti from "https://esm.run/canvas-confetti@1";
 
 function App() {
   const [words, setWords] = useState(null)
@@ -27,6 +28,7 @@ function App() {
   const [pictureChecked, setPictureChecked] = useState(true)
 
   const audioRef = useRef(null)
+  const flashcardRef = useRef(null)
   
   useEffect(() => {
     wordService.getAll().then(ws => {
@@ -123,7 +125,6 @@ function App() {
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
     const word = { word: newWord, meaning: newMeaning, sentence: newSentence, picture: pictureChecked ? '' : '/', i: words.length}
-    console.log(word.picture)
     const duplicate = words.find(w => w.word === newWord)
     
     if (duplicate) {
@@ -202,6 +203,14 @@ function App() {
   }
 
   const handleRightClick = () => {
+    const rect = flashcardRef.current.getBoundingClientRect()
+    confetti({
+      particleCount: 50,
+      startVelocity: 30,
+      spread: 60,
+      origin: { y: (rect.y / screen.height) + 0.2 }
+    });
+
     if (audioRef.current)
       {
         audioRef.current.currentTime = 0
@@ -246,13 +255,13 @@ function App() {
           Your browser does not support the audio element.
         </audio>
 
-      <div id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
         <h4> 
           <button onClick={resetCorrectGuesses}>reset</button>
           &nbsp;
           correct guesses: {correctGuesses}
         </h4>
 
+      <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>
 

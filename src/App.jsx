@@ -70,7 +70,7 @@ function App() {
 
     else if (!showMeaning) {
       if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
-        toggleMeaning(true)
+        handleToggleMeaning(true)
     } 
     else {
       if (key === 'ArrowLeft')

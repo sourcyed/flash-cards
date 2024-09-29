@@ -54,6 +54,9 @@ function App() {
   }, [highlightedWord])
 
   
+  if (!words || typeof words === 'string')
+    return null
+
   const handleKeyUp = e => {
     if (highlightedWord === null) return
 
@@ -79,10 +82,6 @@ function App() {
     }
   }
 
-  if (!words || typeof words === 'string')
-    return null
-
-  
 
   const updateFilter = newFilter => {
     setFilter(newFilter.toLowerCase())
@@ -192,13 +191,13 @@ function App() {
     let availableWords = words.toReversed().map((w, i) => {
       return {...w, i: i+1}
     })
-    if (searchFilter.length > 0)
-      availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
-    
     const _maxWords = maxWords ? maxWords : availableWords.length
     availableWords = wordsOffset >= 0
-      ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(_maxWords + wordsOffset, availableWords.length))
-      : availableWords.slice(Math.max(availableWords.length - _maxWords + wordsOffset + 1, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
+    ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(_maxWords + wordsOffset, availableWords.length))
+    : availableWords.slice(Math.max(availableWords.length - _maxWords + wordsOffset + 1, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
+    
+    if (searchFilter.length > 0)
+      availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
     return availableWords
   }
 

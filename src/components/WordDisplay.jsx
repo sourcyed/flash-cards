@@ -1,5 +1,5 @@
 import './WordDisplay.css'
-
+import confetti from "https://esm.run/canvas-confetti@1";
 
 function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongClick, picture, swapMeanings, replacePicture } ) {
   if (word === null)
@@ -11,7 +11,14 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
       toggleMeaning(true)
     }
 
-    const handleRightClick = () => {
+    const handleRightClick = e => {
+      const rect = e.target.getBoundingClientRect()
+      confetti({
+        particleCount: 50,
+        startVelocity: 30,
+        spread: 60,
+        origin: { y: (rect.y / screen.height) }
+      });
       onRightClick()
     }
 

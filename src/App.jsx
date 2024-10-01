@@ -26,6 +26,7 @@ function App() {
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
   const [pictureChecked, setPictureChecked] = useState(true)
+  const [useTTS, setUseTTS] = useState(false)
 
   const audioRef = useRef(null)
   const flashcardRef = useRef(null)
@@ -39,7 +40,7 @@ function App() {
   }, [])
     
   useEffect(() => {
-    if (highlightedWord) 
+    if (useTTS && highlightedWord) 
       tts.speak(!swapMeanings ? highlightedWord.word : (!showMeaning ? highlightedWord.meaning : highlightedWord.word))
     }, [highlightedWord, showMeaning])
       
@@ -255,6 +256,8 @@ function App() {
         </audio>
 
         <h4> 
+          <button onClick={() => setUseTTS(!useTTS)}>{useTTS ? 'tts' : <em><s>tts</s></em>}</button>
+          &nbsp;
           <button onClick={resetCorrectGuesses}>reset</button>
           &nbsp;
           correct guesses: {correctGuesses}

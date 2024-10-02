@@ -193,12 +193,12 @@ function App() {
       return {...w, i: i+1}
     })
     const _maxWords = maxWords ? maxWords : availableWords.length
-    availableWords = wordsOffset >= 0
-    ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(_maxWords + wordsOffset, availableWords.length))
-    : availableWords.slice(Math.max(availableWords.length - _maxWords + wordsOffset + 1, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
-    
-    if (searchFilter.length > 0)
-      availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
+    availableWords = searchFilter.length > 0
+    ?  availableWords = availableWords.filter(w => w.word.includes(searchFilter) || w.meaning.includes(searchFilter))
+    : (wordsOffset >= 0
+      ? availableWords.slice(Math.max(wordsOffset, 0), Math.min(_maxWords + wordsOffset, availableWords.length))
+      : availableWords.slice(Math.max(availableWords.length - _maxWords + wordsOffset + 1, 0), Math.min(availableWords.length + wordsOffset + 1, availableWords.length))
+    )
     return availableWords
   }
 

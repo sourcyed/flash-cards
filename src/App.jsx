@@ -3,6 +3,7 @@ import './App.css'
 import correctSound from '/correct.mp3'
 import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
+import Footer from './components/Footer'
 import wordService from './services/words'
 import tts from './services/tts'
 import photoService from './services/photos'
@@ -304,6 +305,8 @@ function App() {
             <button type='submit'>auth</button>
         </form>
       </div>
+
+      <Footer />
     </div>
   )
 }

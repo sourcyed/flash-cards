@@ -11,6 +11,8 @@ import authService from './services/auth'
 import confetti from "https://esm.run/canvas-confetti@1";
 
 function App() {
+  const PROGRESS_BAR_MAX = 10
+
   const [words, setWords] = useState(null)
   const [searchFilter, setFilter] = useState('')
   const [newWord, setNewWord] = useState('')
@@ -262,7 +264,7 @@ function App() {
           &nbsp;
           correct guesses: {correctGuesses}
         </h4>
-        <progress max={25} value={correctlyGuessedWords.size}></progress>
+        <progress max={PROGRESS_BAR_MAX} value={correctlyGuessedWords.size % PROGRESS_BAR_MAX} style={{ width: '40vh'}}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>

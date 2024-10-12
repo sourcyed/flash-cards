@@ -6,8 +6,6 @@ function Words( {words, highlightHandler, delHandler, swapMeanings} ) {
 
     const max = Math.ceil(words.length / 1000) * 1000;
     const value = words.length
-    console.log(max);
-    console.log(value);
     
     
     

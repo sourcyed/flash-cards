@@ -171,8 +171,7 @@ function App() {
     
     if (wordsToExclude.size >= visible.length) {
       if (window.confirm('You guessed all the words correctly! Do you want to start over?')) {
-        setCorrectGuesses(0)
-        setCorrectlyGuessedWords(new Set())
+        resetCorrectGuesses()
       }
     }
     if (availableWords.length == 0) return highlightHandler(null)
@@ -237,7 +236,7 @@ function App() {
   }
 
   const resetCorrectGuesses = () => {
-    setCorrectGuesses(0);
+    // setCorrectGuesses(0);
     setCorrectlyGuessedWords(new Set())
   }
 
@@ -263,7 +262,7 @@ function App() {
           &nbsp;
           correct guesses: {correctGuesses}
         </h4>
-
+        <progress max={25} value={correctlyGuessedWords.size}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
         <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>

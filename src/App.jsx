@@ -250,6 +250,9 @@ function App() {
   if (!highlightedWord && visibleWords().length > 0)
     highlightRandomWord()
 
+  const progressMax = Math.ceil(words.length / 1000) * 1000;
+  const progressVal = words.length
+
   return (
     <div>
         <audio ref={audioRef}>
@@ -280,6 +283,11 @@ function App() {
         <button onClick={() => setSwapMeanings(!swapMeanings)}>swap</button>
         &nbsp;
         <Words words={visibleWords()} highlightHandler={highlightHandler} delHandler={delHandler} maxWords={maxWords} swapMeanings={swapMeanings} />
+        <p>
+          {progressVal} / <strong>{progressMax}</strong>
+          <br />
+          <progress max={progressMax} value={progressVal} style={{ width: '40vh'}}></progress>
+        </p>
       </div>
 
       <div>

@@ -20,9 +20,9 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
 
         {
           !showMeaning
-            ? <button className='pulse' onClick={handleWordClick} style={ {width: '100%', height: '100%'}}><h3>{!swapMeanings ? word.word : word.meaning}</h3></button>
+            ? <button className='pulse word-button' onClick={handleWordClick}><h3>{!swapMeanings ? word.word : word.meaning}</h3></button>
             : 
-              <table style={ {width: '100%'}}>
+              <table className='flash-card-table 'style={ {width: '100%', height: '100%'}}>
                 <tbody>
                   <tr>
                     <td>
@@ -47,7 +47,7 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   }
                   
                   {!showMeaning || !picture ? '' :
-                  <tr>
+                  <tr style={{height: '210px'}}>
                     <td>
                         <img src={picture} alt="" onClick={replacePicture}/>
                     </td>
@@ -57,10 +57,10 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   <tr>
                     <td><table><tbody><tr>
                       <td>
-                        <button onClick={onWrongClick} id='wrong-button'>wrong</button>
+                        <button onClick={onWrongClick} className='card-button' id='wrong-button'>wrong</button>
                       </td>
                       <td>
-                        <button onClick={handleRightClick} id='right-button'>right</button>
+                        <button onClick={handleRightClick} className='card-button' id='right-button'>right</button>
                       </td>
                       </tr></tbody></table></td> 
                   </tr>

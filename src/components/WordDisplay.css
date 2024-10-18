@@ -47,3 +47,16 @@
 .pulse {
     animation: pulse-animation 2s infinite;
 }
+
+#wrong-button {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 120px;
+  height: 60px;
+}
+#right-button {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 120px;
+  height: 60px;
+}

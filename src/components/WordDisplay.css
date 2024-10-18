@@ -43,7 +43,6 @@
 }
 
 .flash-card {
-  width: 425px;
   height: 400px;
   display: flex;
   justify-content: center; /* horizontally center */

@@ -13,6 +13,7 @@ function create(word) {
 }
 
 function update(word) {
+    console.log(word.picture)
     const request = axios.put(baseUrl + word.id, word)
     return request.then(r => r.data)
 }

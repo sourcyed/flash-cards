@@ -24,7 +24,6 @@ function App() {
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
-  const [highlightedPicture, setHighlightedPicture] = useState(null)
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
@@ -48,12 +47,8 @@ function App() {
     }, [highlightedWord, showMeaning])
       
   useEffect(() => {
-    if (highlightedWord) {
-      if (highlightedWord.picture)
-        setHighlightedPicture(highlightedWord.picture)
-      else {
+    if (highlightedWord && !highlightedWord.picture) {
         replacePicture()
-      }
     }
   }, [highlightedWord])
 
@@ -151,8 +146,6 @@ function App() {
 
   const highlightHandler = word => {
     handleToggleMeaning(false)
-    if (word !== highlightedWord)
-      setHighlightedPicture(null)
     setHighlight(word)
   }
 
@@ -228,13 +221,12 @@ function App() {
   }
 
   const replacePicture = () => {
-    photoService.getPhoto(highlightedWord.id)
-    .then(r => {
-      highlightedWord.picture = r
-      setWords(words.map(x => x.id === highlightedWord.id ? highlightedWord : x))
-      setHighlightedPicture(r)
+    photoService.getPhotoWord(highlightedWord.id)
+    .then(updatedWord => {
+      setWords(words.map(x => x.id === updatedWord.id ? updatedWord : x))
+      setHighlight(updatedWord)
     })
-    .catch(e => setHighlightedPicture(null) && console.log("can't load picture"))
+    .catch(e => console.log("can't load picture"))
   }
 
   const resetCorrectGuesses = () => {
@@ -253,6 +245,8 @@ function App() {
   const progressMax = Math.ceil(words.length / 1000) * 1000;
   const progressVal = words.length
 
+  if (!highlightedWord) return
+
   return (
     <div>
         <audio ref={audioRef}>
@@ -269,7 +263,7 @@ function App() {
         </h4>
         <progress max={PROGRESS_BAR_MAX} value={correctlyGuessedWords.size % PROGRESS_BAR_MAX} style={{ width: '40vh'}}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedPicture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedWord.picture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>
 
       <div>

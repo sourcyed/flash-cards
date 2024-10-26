@@ -221,7 +221,7 @@ function App() {
   }
 
   const replacePicture = () => {
-    photoService.getPhotoWord(highlightedWord.id)
+    photoService.replacePhoto(highlightedWord.id)
     .then(updatedWord => {
       setWords(words.map(x => x.id === updatedWord.id ? updatedWord : x))
       setHighlight(updatedWord)
@@ -263,7 +263,7 @@ function App() {
         </h4>
         <progress max={PROGRESS_BAR_MAX} value={correctlyGuessedWords.size % PROGRESS_BAR_MAX} style={{ width: '40vh'}}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
-        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} picture={highlightedWord.picture} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
+        <WordDisplay word={highlightedWord} showMeaning={showMeaning} toggleMeaning={handleToggleMeaning} onRightClick={handleRightClick} onWrongClick={() => highlightRandomWord()} swapMeanings={swapMeanings} replacePicture={replacePicture}/>
       </div>
 
       <div>

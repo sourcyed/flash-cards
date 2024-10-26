@@ -1,6 +1,6 @@
 import './WordDisplay.css'
 
-function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongClick, picture, swapMeanings, replacePicture } ) {
+function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongClick, swapMeanings, replacePicture } ) {
   if (word === null)
     return (<br/>)
 
@@ -46,10 +46,10 @@ function WordDisplay( { word, showMeaning, toggleMeaning, onRightClick, onWrongC
                   </tr>
                   }
                   
-                  {!showMeaning || !picture ? '' :
+                  {!showMeaning || !word.picture ? '' :
                   <tr style={{height: '210px'}}>
                     <td>
-                        <img src={picture} alt="" onClick={replacePicture}/>
+                        <img src={word.picture} alt="" onClick={replacePicture}/>
                     </td>
                   </tr>
                   }

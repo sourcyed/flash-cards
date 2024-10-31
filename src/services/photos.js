@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'api/photos/'
+const baseUrl = 'api/words/'
 
 // function getPhotoWord(wordId) {
 //     const request = axios.get(baseUrl + wordId)

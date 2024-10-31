@@ -4,6 +4,7 @@ import correctSound from '/correct.mp3'
 import Words from './components/Words'
 import WordDisplay from './components/WordDisplay'
 import Footer from './components/Footer'
+import Metronome from './components/Metronome'
 import wordService from './services/words'
 import tts from './services/tts'
 import photoService from './services/photos'
@@ -254,12 +255,14 @@ function App() {
           Your browser does not support the audio element.
         </audio>
 
-        <h4> 
+        <h4>
+          
           <button onClick={() => setUseTTS(!useTTS)}>{useTTS ? 'tts' : <em><s>tts</s></em>}</button>
           &nbsp;
           <button onClick={resetCorrectGuesses}>reset</button>
           &nbsp;
-          correct guesses: {correctGuesses}
+          <Metronome></Metronome>
+          <p>correct guesses: {correctGuesses}</p> 
         </h4>
         <progress max={PROGRESS_BAR_MAX} value={correctlyGuessedWords.size % PROGRESS_BAR_MAX} style={{ width: '40vh'}}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>

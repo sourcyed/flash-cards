@@ -225,10 +225,14 @@ function App() {
   }
 
   const replacePicture = () => {
+    const currentHighlightedWordId = highlightedWord.id; // Capture the ID of the highlighted word at the time of the function call
+
     photoService.replacePhoto(highlightedWord.id)
     .then(updatedWord => {
       setWords(words.map(x => x.id === updatedWord.id ? updatedWord : x))
-      setHighlight(updatedWord)
+      setHighlight(highlightedWord =>
+        highlightedWord?.id === currentHighlightedWordId ? updatedWord : highlightedWord
+      );
     })
     .catch(e => console.log("can't load picture"))
   }

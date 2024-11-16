@@ -30,6 +30,7 @@ function App() {
   const [swapMeanings, setSwapMeanings] = useState(false)
   const [pictureChecked, setPictureChecked] = useState(true)
   const [useTTS, setUseTTS] = useState(false)
+  const [useSFX, setUseSFX] = useState(false)
 
   const audioRef = useRef(null)
   const flashcardRef = useRef(null)
@@ -209,8 +210,10 @@ function App() {
 
     if (audioRef.current)
       {
-        audioRef.current.currentTime = 0
-        audioRef.current.play()
+        if (useSFX) {
+          audioRef.current.currentTime = 0
+          audioRef.current.play()
+        }
       }
       else
         console.log("couldn't find audio file")
@@ -258,6 +261,8 @@ function App() {
         <h4>
           
           <button onClick={() => setUseTTS(!useTTS)}>{useTTS ? 'tts' : <em><s>tts</s></em>}</button>
+          &nbsp;
+          <button onClick={() => setUseSFX(!useSFX)}>{useSFX ? 'sfx' : <em><s>sfx</s></em>}</button>
           &nbsp;
           <button onClick={resetCorrectGuesses}>reset</button>
           &nbsp;

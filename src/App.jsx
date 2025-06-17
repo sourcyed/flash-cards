@@ -25,36 +25,38 @@ function App() {
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
-  const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
   const [pictureChecked, setPictureChecked] = useState(true)
   const [useTTS, setUseTTS] = useState(false)
   const [useSFX, setUseSFX] = useState(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [user, setUser] = useState(null)
 
   const audioRef = useRef(null)
   const flashcardRef = useRef(null)
-  
+
   useEffect(() => {
     wordService.getAll().then(ws => {
       setWords(ws)
-    }).catch(err => {
+    }).catch(e => {
       console.error("Can't load words from the database.")
     })
   }, [])
-    
+
   useEffect(() => {
-    if (useTTS && highlightedWord) 
+    if (useTTS && highlightedWord)
       tts.speak(!swapMeanings ? highlightedWord.word : (!showMeaning ? highlightedWord.meaning : highlightedWord.word))
     }, [highlightedWord, showMeaning])
-      
+
   useEffect(() => {
     if (highlightedWord && !highlightedWord.picture) {
         replacePicture()
     }
   }, [highlightedWord])
 
-  
+
   if (!words || typeof words === 'string')
     return null
 
@@ -72,7 +74,7 @@ function App() {
     else if (!showMeaning) {
       if (key === 'Enter' || key === 'ArrowLeft' || key === 'ArrowRight')
         handleToggleMeaning(true)
-    } 
+    }
     else {
       if (key === 'ArrowLeft')
         highlightRandomWord()
@@ -116,7 +118,7 @@ function App() {
     toggleMeaning(toggle)
     toggle ? fillWordInput() : clearWordInput()
   }
-  
+
   const addWord = e => {
     e.preventDefault()
 
@@ -126,7 +128,7 @@ function App() {
 
     const word = { word: newWord, meaning: newMeaning, sentence: newSentence, picture: pictureChecked ? '' : '/', i: words.length}
     const duplicate = words.find(w => w.word === newWord)
-    
+
     if (duplicate) {
       if (window.confirm(`${newWord} already exists in the dictionary, update the meaning?`)) {
         word.id = duplicate.id
@@ -165,7 +167,7 @@ function App() {
   const highlightRandomWord = (wordsToExclude = correctlyGuessedWords) => {
     const visible = visibleWords()
     const availableWords = visible.filter(w => !wordsToExclude.has(w.id))
-    
+
     if (wordsToExclude.size >= visible.length) {
       if (window.confirm('You guessed all the words correctly! Do you want to start over?')) {
         resetCorrectGuesses()
@@ -242,10 +244,59 @@ function App() {
     setCorrectlyGuessedWords(new Set())
   }
 
-  const handleAuth = e => {
+  const handleAuth = async e => {
     e.preventDefault()
-    authService.auth(password).then(r => setAuthed(r))
+
+    try {
+      const user = await authService.auth({
+        username, password
+      })
+      setUser(user)
+      setUsername('')
+      setPassword('')
+      window.alert('Authentication successful!')
+    } catch (exception) {
+      window.alert('Wrong password')
+    }
+    authService.auth(username, password).then(r => setAuthed(r))
   }
+
+  const wordForm = () =>
+    <form onSubmit={addWord}>
+      <h3>Add new word</h3>
+      <p>
+        <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/>
+        &nbsp; : &nbsp;
+        <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
+      </p>
+      <p>
+        <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
+      </p>
+      <p>
+        <input id="picture-checkbox" type="checkbox" style={{width: 25}} checked={pictureChecked} onChange={(e => setPictureChecked(!pictureChecked))} />
+        <label htmlFor="picture-checkbox">Picture</label>
+      </p>
+      <p>
+        <button type="submit">add</button>
+      </p>
+    </form>
+
+  const authForm = () =>
+    <form onSubmit={handleAuth}>
+      <h4>Authenticate</h4>
+      <p>
+        Username &nbsp;
+        <input type="username" value={username} onChange={e => setUsername(e.currentTarget.value)}/>
+      </p>
+      <p>
+        Password &nbsp;
+        <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
+      </p>
+      <p>
+        <button type='submit'>auth</button>
+      </p>
+    </form>
+
 
   if (!highlightedWord && visibleWords().length > 0)
     highlightRandomWord()
@@ -263,7 +314,7 @@ function App() {
         </audio>
 
         <h4>
-          
+
           <button onClick={() => setUseTTS(!useTTS)}>{useTTS ? 'tts' : <em><s>tts</s></em>}</button>
           &nbsp;
           <button onClick={() => setUseSFX(!useSFX)}>{useSFX ? 'sfx' : <em><s>sfx</s></em>}</button>
@@ -271,7 +322,7 @@ function App() {
           <button onClick={resetCorrectGuesses}>reset</button>
           &nbsp;
           <Metronome></Metronome>
-          <p>correct guesses: {correctGuesses}</p> 
+          <p>correct guesses: {correctGuesses}</p>
         </h4>
         <progress max={PROGRESS_BAR_MAX} value={correctlyGuessedWords.size % PROGRESS_BAR_MAX} style={{ width: '40vh'}}></progress>
       <div ref={flashcardRef} id="flashcard" onKeyUp={handleKeyUp} tabIndex="0" style={{outline: "none"}}>
@@ -296,29 +347,14 @@ function App() {
         </p>
       </div>
 
-      <div>
-        <form onSubmit={addWord} style={{ border: '1px solid' }}>
-          <h3>Add new word</h3>
-          <p>
-            <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/> 
-            &nbsp; : &nbsp;
-            <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
-          </p>
-          <p>
-            <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
-          </p>
-          <p>
-            <input id="picture-checkbox" type="checkbox" style={{width: 25}} checked={pictureChecked} onChange={(e => setPictureChecked(!pictureChecked))} />
-            <label htmlFor="picture-checkbox">Picture</label>
-          </p>
-          <p>
-            <button type="submit">add</button>
-          </p>
-        </form>
-        <form onSubmit={handleAuth}>
-            <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
-            <button type='submit'>auth</button>
-        </form>
+      <div style={{ border: '1px solid' }}>
+        {user ?
+          <div>
+            <p>{user.name} logged-in</p>
+            {wordForm()}
+          </div> :
+          authForm()
+        }
       </div>
 
       <Footer />

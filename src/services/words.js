@@ -2,14 +2,23 @@ import axios from 'axios'
 const baseUrl = '/api/words/'
 // const assetsPath = './assets/images/'
 
+let token = null
+
+function setToken(newToken) {
+  token = `Bearer $`
+}
+
 function getAll() {
     const request = axios.get(baseUrl)
     return request.then(r => r.data)
 }
 
-function create(word) {
-    const request = axios.post(baseUrl, word)
-    return request.then(r => r.data)
+async function create(word) {
+  const config = {
+    headers: { Authorization: token },
+  }
+    const response = await axios.post(baseUrl, word, config)
+    return response.data
 }
 
 function update(word) {
@@ -24,8 +33,8 @@ function del(word) {
 
 // function uploadImage(wordId, url) {
 //     const response = axios.get(url, { responseType: 'stream'}).then(r => {
-        
+
 //     })
 // }
 
-export default { getAll, create, update, del }
+export default { getAll, create, update, del, setToken }

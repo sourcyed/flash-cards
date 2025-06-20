@@ -14,7 +14,7 @@ import confetti from "https://esm.run/canvas-confetti@1";
 function App() {
   const PROGRESS_BAR_MAX = 10
 
-  const [words, setWords] = useState(null)
+  const [words, setWords] = useState([])
   const [searchFilter, setFilter] = useState('')
   const [newWord, setNewWord] = useState('')
   const [newMeaning, setNewMeaning] = useState('')
@@ -25,7 +25,6 @@ function App() {
   const [showMeaning, toggleMeaning] = useState(false)
   const [correctGuesses, setCorrectGuesses] = useState(0)
   const [correctlyGuessedWords, setCorrectlyGuessedWords] = useState(new Set())
-  const [authed, setAuthed] = useState(false)
   const [swapMeanings, setSwapMeanings] = useState(false)
   const [pictureChecked, setPictureChecked] = useState(true)
   const [useTTS, setUseTTS] = useState(false)
@@ -43,6 +42,15 @@ function App() {
     }).catch(e => {
       console.error("Can't load words from the database.")
     })
+  }, [])
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      wordService.setToken(user.token)
+    }
   }, [])
 
   useEffect(() => {
@@ -122,7 +130,7 @@ function App() {
   const addWord = e => {
     e.preventDefault()
 
-    if (!authed) return
+    if (!user) return
 
     if (newWord.trim() === '' || newMeaning.trim() === '') return
 
@@ -154,7 +162,7 @@ function App() {
   }
 
   const delHandler = word => {
-    if (!authed) return
+    if (!user) return
 
     if (window.confirm(`Are you sure you want to delete ${word.word} ?`)) {
       wordService.del(word).then(() => {
@@ -240,25 +248,27 @@ function App() {
   }
 
   const resetCorrectGuesses = () => {
-    // setCorrectGuesses(0);
     setCorrectlyGuessedWords(new Set())
   }
 
-  const handleAuth = async e => {
+  const handleLogin = async e => {
     e.preventDefault()
 
     try {
-      const user = await authService.auth({
+      const user = await authService.login({
         username, password
       })
+      window.localStorage.setItem(
+        'loggedUser', JSON.stringify(user)
+      )
+      wordService.setToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
       window.alert('Authentication successful!')
     } catch (exception) {
-      window.alert('Wrong password')
+      window.alert('Invalid credentials')
     }
-    authService.auth(username, password).then(r => setAuthed(r))
   }
 
   const wordForm = () =>
@@ -281,8 +291,8 @@ function App() {
       </p>
     </form>
 
-  const authForm = () =>
-    <form onSubmit={handleAuth}>
+  const loginForm = () =>
+    <form onSubmit={handleLogin}>
       <h4>Authenticate</h4>
       <p>
         Username &nbsp;
@@ -293,7 +303,7 @@ function App() {
         <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)}/>
       </p>
       <p>
-        <button type='submit'>auth</button>
+        <button type='submit'>login</button>
       </p>
     </form>
 
@@ -347,15 +357,23 @@ function App() {
         </p>
       </div>
 
-      <div style={{ border: '1px solid' }}>
-        {user ?
-          <div>
-            <p>{user.name} logged-in</p>
+      {user ?
+        <>
+          <div style={{ border: '1px solid' }}>
+            <p>{user.username}</p>
             {wordForm()}
-          </div> :
-          authForm()
-        }
-      </div>
+          </div>
+          <p>
+          <button onClick={() => {
+            window.localStorage.removeItem('loggedUser');
+            setUser(null);
+          }}>logout</button>
+          </p>
+        </> :
+        <div style={{ border: '1px solid' }}>
+          {loginForm()}
+        </div>
+      }
 
       <Footer />
     </div>

@@ -4,8 +4,12 @@ import metronomeSound from '/Synth_Block_D_hi.wav'
 function Metronome() {
   const [bpm, setBpm] = useState(60)
   const [isPlaying, setIsPlaying] = useState(false)
-  const audioRef = useRef(new Audio(metronomeSound))
+  const audioRef = useRef(null)
   const intervalRef = useRef(null)
+
+  useEffect(() => {
+    audioRef.current = new Audio(metronomeSound)
+  }, [])
 
   const playClick = () => {
     if (audioRef.current) {

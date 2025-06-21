@@ -37,12 +37,17 @@ function App() {
   const flashcardRef = useRef(null)
 
   useEffect(() => {
-    wordService.getAll().then(ws => {
-      setWords(ws)
-    }).catch(e => {
-      console.error("Can't load words from the database.")
-    })
-  }, [])
+    if (user) {
+      wordService.getAll().then(ws => {
+        setWords(ws)
+      }).catch(e => {
+        console.error("Can't load words from the database.")
+      })
+    } else {
+      setWords([])
+      setHighlight(null)
+    }
+  }, [user])
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedUser')
@@ -63,10 +68,6 @@ function App() {
         replacePicture()
     }
   }, [highlightedWord])
-
-
-  if (!words || typeof words === 'string')
-    return null
 
   const handleKeyUp = e => {
     if (highlightedWord === null) return
@@ -277,10 +278,10 @@ function App() {
       <p>
         <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/>
         &nbsp; : &nbsp;
-        <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='meaning'/>
+        <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='english meaning'/>
       </p>
       <p>
-        <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence' style={{width:330}}/>
+        <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence (optional)' style={{width:330}}/>
       </p>
       <p>
         <input id="picture-checkbox" type="checkbox" style={{width: 25}} checked={pictureChecked} onChange={(e => setPictureChecked(!pictureChecked))} />
@@ -313,8 +314,6 @@ function App() {
 
   const progressMax = Math.ceil(words.length / 1000) * 1000;
   const progressVal = words.length
-
-  if (!highlightedWord) return
 
   return (
     <div>

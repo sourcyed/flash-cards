@@ -5,30 +5,42 @@ const baseUrl = '/api/words/'
 let token = null
 
 function setToken(newToken) {
-  token = `Bearer $`
+  token = `Bearer ${newToken}`
 }
 
-function getAll() {
-    const request = axios.get(baseUrl)
-    return request.then(r => r.data)
+async function getAll() {
+    const config = {
+      headers: { Authorization: token },
+    }
+    const request = axios.get(baseUrl, config)
+    const r = await request
+  return r.data
 }
 
 async function create(word) {
-  const config = {
-    headers: { Authorization: token },
-  }
-    const response = await axios.post(baseUrl, word, config)
-    return response.data
+    const config = {
+      headers: { Authorization: token },
+    }
+    const r = await axios.post(baseUrl, word, config)
+    return r.data
 }
 
-function update(word) {
+async function update(word) {
+    const config = {
+      headers: { Authorization: token },
+    }
     const request = axios.put(baseUrl + word.id, word)
-    return request.then(r => r.data)
+    const r = await request
+  return r.data
 }
 
-function del(word) {
+async function del(word) {
+    const config = {
+      headers: { Authorization: token },
+    }
     const request = axios.delete(baseUrl + word.id)
-    return request.then(r => r.data)
+    const r = await request
+  return r.data
 }
 
 // function uploadImage(wordId, url) {

@@ -1,8 +1,14 @@
 import axios from 'axios'
 const loginUrl = 'api/login/'
+const registerUrl = 'api/users'
 
 async function login(credentials) {
     const response = await axios.post(loginUrl, credentials)
+    return response.data
+}
+
+async function register(credentials) {
+    const response = await axios.post(registerUrl, credentials)
     return response.data
 }
 
@@ -18,4 +24,4 @@ async function verify(token) {
   return response.status === 200;
 }
 
-export default { login, verify }
+export default { login, verify, register }

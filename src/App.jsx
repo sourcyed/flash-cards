@@ -275,8 +275,25 @@ function App() {
       setUsername('')
       setPassword('')
       window.alert('Authentication successful!')
-    } catch (exception) {
-      window.alert('Invalid credentials')
+    } catch (error) {
+        if (error.response) {
+          const status = error.response.status
+          const data = error.response.data
+
+          if (status === 401) {
+            // Unauthorized, possibly bad credentials
+            if (data.error === 'user not found') {
+              if (window.confirm(`No such user exists. Create user ${username}?`)) {
+                await authService.register({username, password})
+                handleLogin(e)
+              }
+            } else if (data.error === 'invalid username or password') {
+              window.alert('Invalid credentials.')
+            } else {
+              window.alert('There was an error.')
+            }
+          }
+        }
     }
   }
 

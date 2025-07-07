@@ -37,6 +37,23 @@ function App() {
   const flashcardRef = useRef(null)
 
   useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      authService.verify(user.token).then(verified => {
+        console.log(verified)
+        if (verified) {
+          setUser(user)
+          wordService.setToken(user.token)
+        } else {
+          window.localStorage.removeItem('loggedUser')
+          setUser(null)
+        }
+      })
+    }
+  }, [])
+
+  useEffect(() => {
     if (user) {
       wordService.getAll().then(ws => {
         setWords(ws)
@@ -48,15 +65,6 @@ function App() {
       setHighlight(null)
     }
   }, [user])
-
-  useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedUser')
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON)
-      setUser(user)
-      wordService.setToken(user.token)
-    }
-  }, [])
 
   useEffect(() => {
     if (useTTS && highlightedWord)

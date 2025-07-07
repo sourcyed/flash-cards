@@ -6,4 +6,16 @@ async function login(credentials) {
     return response.data
 }
 
-export default { login }
+async function verify(token) {
+  if (!token || typeof token !== 'string') {
+    return false;
+  }
+
+  const response = await axios.get(`${loginUrl}verify`, {
+    headers: { Authorization: `Bearer ${token}` },
+    validateStatus: () => true
+  });
+  return response.status === 200;
+}
+
+export default { login, verify }

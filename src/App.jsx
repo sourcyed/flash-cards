@@ -168,6 +168,7 @@ function App() {
   const highlightHandler = word => {
     handleToggleMeaning(false)
     setHighlight(word)
+    flashcardRef.current.focus()
   }
 
   const delHandler = word => {

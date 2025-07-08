@@ -302,12 +302,12 @@ function App() {
     <form onSubmit={addWord}>
       <h3>Add new word</h3>
       <p>
-        <input onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/>
+        <input type='text' autoCapitalize='none' onChange={handleInput(setNewWord)} value={newWord} placeholder='word'/>
         &nbsp; : &nbsp;
-        <input onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='english meaning'/>
+        <input type='text' autoCapitalize='none' onChange={handleInput(setNewMeaning)} value={newMeaning} placeholder='english meaning'/>
       </p>
       <p>
-        <input onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence (optional)' style={{width:330}}/>
+        <input type='text' onChange={handleInput(setSentence)} value={newSentence} placeholder='example sentence (optional)' style={{width:330}}/>
       </p>
       <p>
         <input id="picture-checkbox" type="checkbox" style={{width: 25}} checked={pictureChecked} onChange={(e => setPictureChecked(!pictureChecked))} />
@@ -323,7 +323,7 @@ function App() {
       <h4>Authenticate</h4>
       <p>
         Username &nbsp;
-        <input type="username" value={username} onChange={e => setUsername(e.currentTarget.value)}/>
+        <input type="text" autoCapitalize='none' value={username} onChange={e => setUsername(e.currentTarget.value)}/>
       </p>
       <p>
         Password &nbsp;

@@ -41,7 +41,6 @@ function App() {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       authService.verify(user.token).then(verified => {
-        console.log(verified)
         if (verified) {
           setUser(user)
           wordService.setToken(user.token)
